@@ -8,14 +8,9 @@ import CourseService from "../../services/course.service";
 
 import {
   Container,
-  PopUpBackground,
-  PopUpContainer,
-  PopUpCloseBtn,
-  PopUpCloseBtn1,
-  PopUpTitle,
-  PopUpH1,
-  PopUpFooter,
-  PopUpBtn,
+  DivWrapper1,
+  DivWrapper2,
+  DivWrapper3,
   CourseWrapper,
   CourseWrap,
   CourseRow,
@@ -32,6 +27,14 @@ import {
   PostCourseDateWrap,
   PostCourseDate,
   PostCourseBtn,
+  PopUpBackground,
+  PopUpContainer,
+  PopUpCloseBtn,
+  PopUpCloseBtn1,
+  PopUpTitle,
+  PopUpH1,
+  PopUpFooter,
+  PopUpBtn,
   MsgWrap,
   MsgDiv,
   MsgDivOne,
@@ -64,7 +67,7 @@ const Course = (props) => {
   let [openEdit, setOpenEdit] = useState(false);
   let [openDelete, setOpenDelete] = useState(false);
   let [openOne, setOpenOne] = useState(true);
-  let [contin, setContin] = useState(null);
+  let [contin, setContin] = useState(true);
   const history = useHistory();
 
   // const handleTakeToLogin = () => {
@@ -129,7 +132,7 @@ const Course = (props) => {
   // };
 
   const handleContinue = () => {
-    setContin(history.go(0));
+    setContin(false);
   };
 
   let true1 = true;
@@ -259,230 +262,230 @@ const Course = (props) => {
         </div>
       )}
       {currentUser && courseData && courseData.length != 0 && (
-        <CourseWrapper>
-          {courseData.map((course) => (
-            <CourseWrap id={course._id}>
-              <CourseRow>
-                <CourseH5>{course.title}</CourseH5>
-                {/* <CoursePwrap> */}
+        <DivWrapper1>
+          <DivWrapper2>
+            {courseData.map((course) => (
+              <CourseWrapper>
+                <CourseWrap id={course._id}>
+                  {/* <CourseRow> */}
+                  <CourseH5>{course.title}</CourseH5>
+                  {/* <CoursePwrap> */}
 
-                {currentUser && currentUser.user.role == "student" && (
-                  <Link to={`/instructorprofile/${course.instructor._id}`}>
-                    <CourseP>Instructor: {course.instructor.username}</CourseP>
-                  </Link>
-                )}
-                <CourseP>{course.description}</CourseP>
-                <CourseP>
-                  Student Count: {course.students.length}/{course.max}
-                </CourseP>
-                {currentUser && currentUser.user.role == "instructor" && (
+                  {currentUser && currentUser.user.role == "student" && (
+                    <Link to={`/instructorprofile/${course.instructor._id}`}>
+                      <CourseP>Instructor: {course.instructor.username}</CourseP>
+                    </Link>
+                  )}
+                  <CourseP>{course.description}</CourseP>
+                  <CourseP>
+                    Student Count: {course.students.length}/{course.max}
+                  </CourseP>
+                  {/* {currentUser && currentUser.user.role == "instructor" && (
                   <CourseP>
                     {course.students.map((k) => {
                       <CourseP>Students:{k.username}</CourseP>;
                     })}
                   </CourseP>
-                )}
-                <CourseP>Price: ${course.price}</CourseP>
-                <CourseP>Start: {course.startDate}</CourseP>
-                {/* <CourseP>Student Delete</CourseP> */}
-                {currentUser && currentUser.user.role == "student" && (
-                  <CourseBtn onClick={PopUpDeleteStudentCourse} id={course._id}>
-                    <AiFillDelete />
-                    delete
-                  </CourseBtn>
-                )}
-                {currentUser && currentUser.user.role == "instructor" && (
-                  <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
-                    {/* <AiFillDelete /> */}
-                    delete
-                  </CourseBtn>
-                )}
-                {currentUser && currentUser.user.role == "instructor" && (
-                  <CourseBtn onClick={PopUpEdit} id={course._id}>
-                    Edit
-                  </CourseBtn>
-                )}
-                {/* {course.students.length >= 1 ? PopUpError : true1} */}
-                {edit === course._id && course.students.length > 0 && openEdit && (
-                  // <MsgContainer>
-                  <MsgWrap>
-                    <MsgDiv>
-                      <MsgBtn onClick={handleCloseEdit}>x</MsgBtn>
-                      <MsgIcon>
-                        <ImWarning />
-                        <MsgH1>Error !</MsgH1>
-                      </MsgIcon>
-                      <MsgP>Student are not 0 </MsgP>
-                    </MsgDiv>
-                  </MsgWrap>
-                  // </MsgContainer>
-                )}
-                {course.students.length > 0 && openDelete && instructorCourses === course._id && (
-                  // <MsgContainer>
-                  <MsgWrap>
-                    <MsgDiv>
-                      <MsgBtn onClick={handleCloseDelete}>x</MsgBtn>
-                      <MsgIcon>
-                        <ImWarning />
-                        <MsgH1>Error !</MsgH1>
-                      </MsgIcon>
-                      <MsgP>Student need to be 0 </MsgP>
-                    </MsgDiv>
-                  </MsgWrap>
-                  // </MsgContainer>
-                )}
-                {openEdit &&
-                  edit === course._id &&
-                  course.students.length === 0 &&
-                  currentUser &&
-                  currentUser.user.role == "instructor" && (
-                    <PostCourseContent>
-                      {/* {courseData.map((course) => ( */}
-                      <PostCourseContent>
-                        {currentUser && currentUser.user.role == "instructor" && (
-                          <PostCourseForm>
-                            <PostCourseH1 onClick={handleClose}>Post Course</PostCourseH1>
-                            <PostCourseLabel for="exampleforTitle">Title</PostCourseLabel>
-                            <PostCourseInput
-                              name="title"
-                              type="text"
-                              id="exampleforTitle"
-                              defaultValue={course.title}
-                              onChange={handleChangeTitle}
-                            ></PostCourseInput>
-                            <PostCourseLabel for="exampleforContent">Content</PostCourseLabel>
-                            <PostCourseText
-                              id="exampleforContent"
-                              aria-describedby="emailHelp"
-                              name="content"
-                              defaultValue={course.description}
-                              onChange={handleChangeDescription}
-                            ></PostCourseText>
-                            <PostCourseLabel>max</PostCourseLabel>
-                            <PostCourseInput
-                              name="max"
-                              type="number"
-                              defaultValue={course.max}
-                              onChange={handleChangeMax}
-                            ></PostCourseInput>
-                            <PostCourseDateWrap>
-                              <PostCourseDate>
-                                <PostCourseLabel>Start</PostCourseLabel>
-                                <PostCourseInput
-                                  type="date"
-                                  id="datefield"
-                                  min="2021-10-20"
-                                  max="2022-13-13"
-                                  defaultValue={course.startDate}
-                                  onChange={handleChangeDate}
-                                  required
-                                ></PostCourseInput>
-                              </PostCourseDate>
-                              <PostCourseDate>
-                                <PostCourseLabel>End</PostCourseLabel>
-                                <PostCourseInput type="date"></PostCourseInput>
-                              </PostCourseDate>
-                            </PostCourseDateWrap>
-                            <PostCourseLabel for="exampleforPrice">Price</PostCourseLabel>
-                            <PostCourseInput
-                              name="price"
-                              type="number"
-                              // className="form-control"
-                              id="exampleforPrice"
-                              defaultValue={course.price}
-                              onChange={handleChangePrice}
-                              placeholder="$"
-                            ></PostCourseInput>
-                            <PostCourseBtn onClick={handleEditCourse} id={course._id}>
-                              Save
-                            </PostCourseBtn>
-                            {/* <span onClick={handleClose}>x</span> */}
-                          </PostCourseForm>
-                        )}
-                      </PostCourseContent>
-                      {/* ))} */}
-                    </PostCourseContent>
+                )} */}
+                  <CourseP>Price: ${course.price}</CourseP>
+                  <CourseP>Start: {course.startDate}</CourseP>
+                  {/* <CourseP>Student Delete</CourseP> */}
+                  {currentUser && currentUser.user.role == "student" && (
+                    <CourseBtn onClick={PopUpDeleteStudentCourse} id={course._id}>
+                      <AiFillDelete />
+                      delete
+                    </CourseBtn>
                   )}
+                  {currentUser && currentUser.user.role == "instructor" && (
+                    <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
+                      {/* <AiFillDelete /> */}
+                      delete
+                    </CourseBtn>
+                  )}
+                  {currentUser && currentUser.user.role == "instructor" && (
+                    <CourseBtn onClick={PopUpEdit} id={course._id}>
+                      Edit
+                    </CourseBtn>
+                  )}
+                  {/* </CourseRow> */}
+                </CourseWrap>
+              </CourseWrapper>
+            ))}
+          </DivWrapper2>
 
-                {openDelete && instructorCourses === course._id && course.students.length === 0 && (
-                  <PopUpBackground>
-                    <PopUpContainer>
-                      <PopUpCloseBtn>
-                        <PopUpCloseBtn1 onClick={handleCloseDelete}>x</PopUpCloseBtn1>
-                      </PopUpCloseBtn>
-                      <PopUpTitle>
-                        <PopUpH1>Are You Sure To Delete ?</PopUpH1>
-                      </PopUpTitle>
-                      <PopUpFooter>
-                        <PopUpBtn onClick={handleCloseDelete}>Cancel</PopUpBtn>
-                        <PopUpBtn onClick={handleDelete} id={course._id}>
-                          Delete
-                        </PopUpBtn>
-                      </PopUpFooter>
-                    </PopUpContainer>
-                  </PopUpBackground>
-                )}
-                {messageSuccess && instructorCourses === course._id && (
-                  // <MsgContainer>
-                  <MsgWrap>
-                    <MsgDivOne>
-                      <MsgIcon>
-                        <MdOutlineDone />
-                        <MsgH1>Success !</MsgH1>
-                      </MsgIcon>
-                      <MsgP>{messageSuccess}</MsgP>
-                      {/* <MsgBtn onClick={handleCloseOne}>x</MsgBtn> */}
-                      {/* <MsgBtnDiv> */}
-                      {/* <MsgBtn1 onClick={handleAgain}>Post Course Again</MsgBtn1> */}
-                      <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
+          {/* <DivWrapper3> */}
+          {/* {course.students.length >= 1 ? PopUpError : true1} */}
+          {/* {edit === course._id && course.students.length > 0 && openEdit && (
+            
+            <MsgWrap>
+              <MsgDiv>
+                <MsgBtn onClick={handleCloseEdit}>x</MsgBtn>
+                <MsgIcon>
+                  <ImWarning />
+                  <MsgH1>Error !</MsgH1>
+                </MsgIcon>
+                <MsgP>Student are not 0 </MsgP>
+              </MsgDiv>
+            </MsgWrap>
+           
+          )} */}
+          {/* {course.students.length > 0 && openDelete && instructorCourses === course._id && (
+            
+            <MsgWrap>
+              <MsgDiv>
+                <MsgBtn onClick={handleCloseDelete}>x</MsgBtn>
+                <MsgIcon>
+                  <ImWarning />
+                  <MsgH1>Error !</MsgH1>
+                </MsgIcon>
+                <MsgP>Student need to be 0 </MsgP>
+              </MsgDiv>
+            </MsgWrap>
+            
+          )} */}
+          {/* {openEdit &&
+            edit === course._id &&
+            course.students.length === 0 &&
+            currentUser &&
+            currentUser.user.role == "instructor" && (
+              <PostCourseContent>
+                <PostCourseContent>
+                  {currentUser && currentUser.user.role == "instructor" && (
+                    <PostCourseForm>
+                      <PostCourseH1 onClick={handleClose}>Post Course</PostCourseH1>
+                      <PostCourseLabel for="exampleforTitle">Title</PostCourseLabel>
+                      <PostCourseInput
+                        name="title"
+                        type="text"
+                        id="exampleforTitle"
+                        defaultValue={course.title}
+                        onChange={handleChangeTitle}
+                      ></PostCourseInput>
+                      <PostCourseLabel for="exampleforContent">Content</PostCourseLabel>
+                      <PostCourseText
+                        id="exampleforContent"
+                        aria-describedby="emailHelp"
+                        name="content"
+                        defaultValue={course.description}
+                        onChange={handleChangeDescription}
+                      ></PostCourseText>
+                      <PostCourseLabel>max</PostCourseLabel>
+                      <PostCourseInput
+                        name="max"
+                        type="number"
+                        defaultValue={course.max}
+                        onChange={handleChangeMax}
+                      ></PostCourseInput>
+                      <PostCourseDateWrap>
+                        <PostCourseDate>
+                          <PostCourseLabel>Start</PostCourseLabel>
+                          <PostCourseInput
+                            type="date"
+                            id="datefield"
+                            min="2021-10-20"
+                            max="2022-13-13"
+                            defaultValue={course.startDate}
+                            onChange={handleChangeDate}
+                            required
+                          ></PostCourseInput>
+                        </PostCourseDate>
+                        <PostCourseDate>
+                          <PostCourseLabel>End</PostCourseLabel>
+                          <PostCourseInput type="date"></PostCourseInput>
+                        </PostCourseDate>
+                      </PostCourseDateWrap>
+                      <PostCourseLabel for="exampleforPrice">Price</PostCourseLabel>
+                      <PostCourseInput
+                        name="price"
+                        type="number"
+                        id="exampleforPrice"
+                        defaultValue={course.price}
+                        onChange={handleChangePrice}
+                        placeholder="$"
+                      ></PostCourseInput>
+                      <PostCourseBtn onClick={handleEditCourse} id={course._id}>
+                        Save
+                      </PostCourseBtn>
+                      <span onClick={handleClose}>x</span>
+                    </PostCourseForm>
+                  )}
+                </PostCourseContent>
+              </PostCourseContent>
+            )} */}
 
-                      {/* </MsgBtnDiv> */}
-                    </MsgDivOne>
-                  </MsgWrap>
-                  // </MsgContainer>
-                )}
-                {open && studentCourses === course._id && (
-                  <PopUpBackground>
-                    <PopUpContainer>
-                      <PopUpCloseBtn>
-                        <PopUpCloseBtn1 onClick={handleClose}>x</PopUpCloseBtn1>
-                      </PopUpCloseBtn>
-                      <PopUpTitle>
-                        <PopUpH1>Are You Sure To Delete ?</PopUpH1>
-                      </PopUpTitle>
-                      <PopUpFooter>
-                        <PopUpBtn onClick={handleClose}>Cancel</PopUpBtn>
-                        <PopUpBtn onClick={handleDeleteStudentCourse} id={course._id}>
-                          Delete
-                        </PopUpBtn>
-                      </PopUpFooter>
-                    </PopUpContainer>
-                  </PopUpBackground>
-                )}
-                {messageSuccess && studentCourses === course._id && (
-                  // <MsgContainer>
-                  <MsgWrap>
-                    <MsgDivOne>
-                      <MsgIcon>
-                        <MdOutlineDone />
-                        <MsgH1>Success !</MsgH1>
-                      </MsgIcon>
-                      <MsgP>{messageSuccess}</MsgP>
-                      {/* <MsgBtn onClick={handleCloseOne}>x</MsgBtn> */}
-                      {/* <MsgBtnDiv> */}
-                      {/* <MsgBtn1 onClick={handleAgain}>Post Course Again</MsgBtn1> */}
-                      <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
+          {/* {openDelete && instructorCourses === course._id && course.students.length === 0 && (
+            <PopUpBackground>
+              <PopUpContainer>
+                <PopUpCloseBtn>
+                  <PopUpCloseBtn1 onClick={handleCloseDelete}>x</PopUpCloseBtn1>
+                </PopUpCloseBtn>
+                <PopUpTitle>
+                  <PopUpH1>Are You Sure To Delete ?</PopUpH1>
+                </PopUpTitle>
+                <PopUpFooter>
+                  <PopUpBtn onClick={handleCloseDelete}>Cancel</PopUpBtn>
+                  <PopUpBtn onClick={handleDelete} id={course._id}>
+                    Delete
+                  </PopUpBtn>
+                </PopUpFooter>
+              </PopUpContainer>
+            </PopUpBackground>
+          )} */}
+          {/* {messageSuccess && instructorCourses === course._id && contin && (
+            <MsgWrap>
+              <MsgDivOne>
+                <MsgIcon>
+                  <MdOutlineDone />
+                  <MsgH1>Success !</MsgH1>
+                </MsgIcon>
+                <MsgP>{messageSuccess}</MsgP>
 
-                      {/* </MsgBtnDiv> */}
-                    </MsgDivOne>
-                  </MsgWrap>
-                  // </MsgContainer>
-                )}
-                {/* </CoursePwrap> */}
-              </CourseRow>
-            </CourseWrap>
-          ))}
-        </CourseWrapper>
+                <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
+              </MsgDivOne>
+            </MsgWrap>
+          )} */}
+
+          {/* {open && studentCourses === course._id && ( */}
+          {open && (
+            <PopUpBackground>
+              <PopUpContainer>
+                <PopUpCloseBtn>
+                  <PopUpCloseBtn1 onClick={handleClose}>x</PopUpCloseBtn1>
+                </PopUpCloseBtn>
+                <PopUpTitle>
+                  <PopUpH1>Are You Sure To Delete ?</PopUpH1>
+                </PopUpTitle>
+                <PopUpFooter>
+                  <PopUpBtn onClick={handleClose}>Cancel</PopUpBtn>
+                  <PopUpBtn onClick={handleDeleteStudentCourse}>Delete</PopUpBtn>
+                </PopUpFooter>
+              </PopUpContainer>
+            </PopUpBackground>
+          )}
+
+          {/* {messageSuccess && studentCourses === course._id && contin && ( */}
+          {messageSuccess && contin && (
+            // <MsgContainer>
+            <MsgWrap>
+              <MsgDivOne>
+                <MsgIcon>
+                  <MdOutlineDone />
+                  <MsgH1>Success !</MsgH1>
+                </MsgIcon>
+                <MsgP>{messageSuccess}</MsgP>
+                {/* <MsgBtn onClick={handleCloseOne}>x</MsgBtn> */}
+                {/* <MsgBtnDiv> */}
+                {/* <MsgBtn1 onClick={handleAgain}>Post Course Again</MsgBtn1> */}
+                <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
+
+                {/* </MsgBtnDiv> */}
+              </MsgDivOne>
+            </MsgWrap>
+            // </MsgContainer>
+          )}
+          {/* </CoursePwrap> */}
+          {/* </DivWrapper3> */}
+        </DivWrapper1>
       )}
     </Container>
   );

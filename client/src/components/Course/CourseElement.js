@@ -4,109 +4,64 @@ export const Container = styled.div`
   min-height: 1000px;
   background: #fff;
 `;
-export const PopUpBackground = styled.div`
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* background-color: rgba(200, 200, 200); */
-  /* position: fixed; */
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  top: 3rem;
-  z-index: 1;
-`;
-export const PopUpContainer = styled.div`
-  width: auto;
-  height: auto;
-  border-radius: 12px;
-  background-color: white;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
+export const DivWrapper1 = styled.div`
+  /* display: inline-flex; */
 `;
 
-export const PopUpCloseBtn = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-export const PopUpCloseBtn1 = styled.button`
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-
-  :hover {
-    color: green;
-  }
-`;
-
-export const PopUpTitle = styled.div`
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-`;
-
-export const PopUpH1 = styled.h1``;
-
-export const PopUpFooter = styled.div`
-  flex: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const PopUpBtn = styled.button`
-  width: 150px;
-  height: 45px;
-  margin: 10px;
-  border: none;
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-
-  :hover {
-    color: black;
-  }
-`;
-
-export const CourseWrapper = styled.div`
+export const DivWrapper2 = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 50px;
-  z-index: 0;
+  /* border: 1 solid red; */
+  /* height: auto; */
+  /* width: auto; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+`;
+export const DivWrapper3 = styled.div`
+  /* float: center;
+  z-index: 1; */
 `;
 
-export const CourseWrap = styled.div`
+export const CourseWrapper = styled.div`
+  /* display: inline; */
+  /* height: 100%; */
+  /* width: 20rem; */
   /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 50px; */
+  justify-content: flex-start;
+  align-items: flex-start; */
+  /* margin-left: 50px; */
+  /* z-index: 0; */
+`;
+
+export const CourseWrap = styled.div`
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center;
+  align-items: flex-start; */
+  /* margin-left: 50px; */
+  /* z-index: 0; */
   /* height: 200px;
   width: 300px;
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
   margin: 50px;
   border-radius: 30px;
   border: 2px solid black; */
-`;
-
-export const CourseRow = styled.div`
-  /* display: flex;
-  justify-content: flex-start;
+  /* display: flex; */
+  /* justify-content: flex-start;
   align-items: flex-start; */
+  /* border: 1 solid red; */
   height: 15rem;
-  min-width: 23rem;
+  min-width: 35rem;
   max-width: 30rem;
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+  margin-left: 30px;
   margin-right: 30px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -114,6 +69,23 @@ export const CourseRow = styled.div`
   border-radius: 30px;
   border: 2px solid black;
 `;
+
+// export const CourseRow = styled.div`
+//   /* display: flex; */
+//   /* justify-content: flex-start;
+//   align-items: flex-start; */
+//   height: 15rem;
+//   min-width: 35rem;
+//   max-width: 30rem;
+//   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+//   margin-left: 30px;
+//   margin-right: 30px;
+//   margin-top: 20px;
+//   margin-bottom: 10px;
+
+//   border-radius: 30px;
+//   border: 2px solid black;
+// `;
 
 export const CourseH5 = styled.h5`
   /* display: flex;
@@ -126,6 +98,7 @@ export const CourseH5 = styled.h5`
   font-size: 1.5rem;
   /* border-bottom: auto solid black; */
   /* border-width: 1.5rem; */
+  /* border: 1 solid red; */
   color: black;
 `;
 
@@ -239,6 +212,76 @@ export const PostCourseDate = styled.div`
   flex-direction: column;
   margin: auto;
   /* width: 300px; */
+`;
+
+export const PopUpBackground = styled.div`
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* background-color: rgba(200, 200, 200); */
+  /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  top: 3rem;
+  z-index: 1;
+`;
+export const PopUpContainer = styled.div`
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  background-color: white;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+`;
+
+export const PopUpCloseBtn = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const PopUpCloseBtn1 = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+
+  :hover {
+    color: green;
+  }
+`;
+
+export const PopUpTitle = styled.div`
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+`;
+
+export const PopUpH1 = styled.h1``;
+
+export const PopUpFooter = styled.div`
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PopUpBtn = styled.button`
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+
+  :hover {
+    color: black;
+  }
 `;
 
 export const MsgWrap = styled.div`
