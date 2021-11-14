@@ -15,6 +15,7 @@ export const DivWrapper2 = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  z-index: 0;
   /* border: 1 solid red; */
   /* height: auto; */
   /* width: auto; */
@@ -143,12 +144,70 @@ export const CourseBtn = styled.button`
   } */
 `;
 
-export const PostCourseContent = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+// export const PostCourseContent = styled.div`
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+// `;
+
+export const EditWrapper = styled.div``;
+export const EditLabel = styled.label`
+  font-size: 14px;
+  color: black;
 `;
+
+export const EditInputH5 = styled.input`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  padding: 0.1rem;
+  /* border-bottom: auto solid black; */
+  /* border-width: 1.5rem; */
+  border: 1px solid grey;
+
+  border-radius: 4px;
+  color: black;
+  background: none;
+`;
+
+export const EditInput = styled.input`
+  /* display: inline-block; */
+  max-width: 10000px;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  background: none;
+`;
+export const EditText = styled.textarea`
+  /* display: inline-block; */
+  max-width: 10000px;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  background: none;
+`;
+export const EditDateWrap = styled.div`
+  padding: 10px 10px;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 4px;
+  /* background: none; */
+`;
+// export const EditDate = styled.input`
+//   padding: 10px 10px;
+//   margin-bottom: 14px;
+//   border: none;
+//   border-radius: 4px;
+//   /* background: none; */
+// `;
 
 export const PostCourseForm = styled.form`
   background: black;
@@ -179,6 +238,7 @@ export const PostCourseInput = styled.input`
   margin-bottom: 14px;
   border: none;
   border-radius: 4px;
+  /* background: black; */
 `;
 
 export const PostCourseText = styled.textarea`
