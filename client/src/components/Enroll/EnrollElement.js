@@ -172,6 +172,7 @@ export const EnrollRow = styled.div`
 
   border-radius: 30px;
   border: 2px solid black;
+  /* overflow: scroll;; */
 `;
 
 export const EnrollH5 = styled.h5`

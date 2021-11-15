@@ -24,7 +24,7 @@ const PopUp = (props) => {
     // window.alert("Logout Successfully,now you are redirect to homepage ");
     setCurrentUser(null);
     history.push("/");
-    history.go(0);
+    setOpen(false);
   };
 
   const handleClose = () => {

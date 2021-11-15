@@ -122,8 +122,8 @@ export const CourseBtn = styled.button`
   background: none;
   border: none;
   border-radius: 50px;
-  font-size: 35px;
-  margin-left: 2rem;
+  font-size: 20px;
+  margin-left: 6rem;
   /* margin-top: 1rem; */
 
   /* width: 50px; */
@@ -167,21 +167,23 @@ export const EditInputH5 = styled.input`
   margin-right: 1rem;
   font-size: 1.5rem;
   padding: 0.1rem;
+  width: 25rem;
   /* border-bottom: auto solid black; */
   /* border-width: 1.5rem; */
-  border: 1px solid grey;
-
+  border: 1px solid rgb(128, 128, 128, 0.3);
   border-radius: 4px;
   color: black;
   background: none;
 `;
 
 export const EditInput = styled.input`
-  /* display: inline-block; */
-  max-width: 10000px;
+  display: block;
+  width: 25rem;
   margin-left: 2rem;
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  border: 1px solid rgb(128, 128, 128, 0.3);
+  border-radius: 4px;
   color: black;
   background: none;
 `;
@@ -195,19 +197,25 @@ export const EditText = styled.textarea`
   background: none;
 `;
 export const EditDateWrap = styled.div`
-  padding: 10px 10px;
-  margin-bottom: 14px;
+  /* display: inline; */
+  /* padding: 10px 10px; */
+  /* margin-bottom: 14px; */
   border: none;
   border-radius: 4px;
   /* background: none; */
 `;
-// export const EditDate = styled.input`
-//   padding: 10px 10px;
-//   margin-bottom: 14px;
-//   border: none;
-//   border-radius: 4px;
-//   /* background: none; */
-// `;
+export const EditDate = styled.input`
+  /* display: block; */
+  max-width: 10000px;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid rgb(128, 128, 128, 0.3);
+
+  border-radius: 4px;
+  color: black;
+  background: none;
+`;
 
 export const PostCourseForm = styled.form`
   background: black;
@@ -281,7 +289,7 @@ export const PopUpBackground = styled.div`
   /* position: fixed; */
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   top: 3rem;
   z-index: 1;
 `;
@@ -347,12 +355,23 @@ export const PopUpBtn = styled.button`
 export const MsgWrap = styled.div`
   /* height: 100%; */
   /* width: 100%; */
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   flex-direction: column;
-  z-index: 1;
+  z-index: 1; */
+  height: 15rem;
+  min-width: 35rem;
+  max-width: 30rem;
+  background: red;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  border-radius: 30px;
+  border: 2px solid black;
 `;
 export const MsgDiv = styled.div`
   /* justify-content: center;

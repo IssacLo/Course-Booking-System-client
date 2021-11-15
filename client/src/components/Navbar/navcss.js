@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#032026" : "#032026")};
+  background: ${({ scrollNav }) => (scrollNav ? "#4E7FBF" : "#313759")};
   height: 80px;
   /* margin-top: -80px; */
   display: flex;
@@ -30,8 +30,8 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #9fb6bf;
-  font-family: Andale Mono;
+  color: #04adbf;
+  /* font-family: Andale Mono; */
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -63,7 +63,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   margin-right: -22px;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -76,7 +76,7 @@ export const NavItem = styled.li`
 
 export const NavLinks = styled(LinkS)`
   color: #fff;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -111,7 +111,7 @@ export const NavBtn1 = styled.span`
   padding: 10px 20px;
   color: #fff;
   font-size: 16px;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   outline: none;
   border: none;
   cursor: pointer;
@@ -132,7 +132,7 @@ export const NavBtnLink = styled(LinkR)`
   padding: 10px 22px;
   color: #fff;
   font-size: 16px;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   outline: none;
   border: none;
   cursor: pointer;
@@ -148,7 +148,7 @@ export const NavBtnLink = styled(LinkR)`
 
 export const NavBtnLink1 = styled(LinkR)`
   color: #fff;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   display: flex;
   align-items: center;
   text-decoration: none;
