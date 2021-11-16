@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Link as LinkS } from "react-scroll";
 
 export const Container = styled.div`
   min-height: 692px;
@@ -179,14 +180,14 @@ export const FormContent = styled.div`
 
 export const Form = styled.form`
   background: #010101;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   width: 100%;
   z-index: 0;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
-  border-radius: 4px;
+  padding: 30px 50px;
+  border-radius: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
   @media screen and (max-width: 400px) {
@@ -195,11 +196,13 @@ export const Form = styled.form`
 `;
 
 export const FormH1 = styled.h1`
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   color: #fff;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: center;
+  font-size: 2rem;
+
+  font-weight: bold;
+  text-align: left;
 `;
 
 export const FormLabel = styled.label`

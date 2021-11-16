@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
+import { GrLogout, GrLogin } from "react-icons/gr";
+import { RiLogoutBoxRLine, RiLoginBoxLine } from "react-icons/ri";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#4E7FBF" : "#313759")};
+  background: ${({ scrollNav }) => (scrollNav ? "#15366b" : "#102B57")};
   height: 80px;
   /* margin-top: -80px; */
   display: flex;
@@ -30,11 +32,12 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #04adbf;
+  color: white;
   /* font-family: Andale Mono; */
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  letter-spacing: 0.7px;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   margin-left: 24px;
@@ -85,8 +88,11 @@ export const NavLinks = styled(LinkS)`
   height: 100%;
   cursor: pointer;
 
+  &:hover {
+    color: #92ffe8;
+  }
   &.active {
-    border-bottom: 3px solid #80a6a2;
+    border-bottom: 3px solid #61d2d6;
   }
 `;
 
@@ -103,12 +109,12 @@ export const NavBtn = styled.nav`
   }
 `;
 export const NavBtn1 = styled.span`
-  border-radius: 20px;
-  background: #2d6673;
+  border-radius: 10px;
+  background: #ff8154;
   white-space: nowrap;
   margin-top: 20px;
   margin-bottom: 15px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: #fff;
   font-size: 16px;
   /* font-family: Andale Mono; */
@@ -120,16 +126,16 @@ export const NavBtn1 = styled.span`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #2d6673;
+    background: #d46d48;
+    color: #322b29;
   }
 `;
 
 export const NavBtnLink = styled(LinkR)`
-  border-radius: 50px;
-  background: #2d6673;
+  border-radius: 10px;
+  background: #ff8154;
   white-space: nowrap;
-  padding: 10px 22px;
+  padding: 10px 15px;
   color: #fff;
   font-size: 16px;
   /* font-family: Andale Mono; */
@@ -141,8 +147,8 @@ export const NavBtnLink = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #2d6673;
+    background: #d46d48;
+    color: #322b29;
   }
 `;
 
@@ -157,7 +163,26 @@ export const NavBtnLink1 = styled(LinkR)`
   height: 100%;
   cursor: pointer;
 
-  &.active {
+  /* &.active {
     border-bottom: 3px solid #80a6a2;
-  }
+  } */
+`;
+
+export const LineLogout = styled(GrLogout)`
+  margin-left: 8px;
+  font-size: 20px;
+`;
+
+export const Logout = styled(RiLogoutBoxRLine)`
+  margin-left: 8px;
+  font-size: 20px;
+`;
+export const LineLogIn = styled(GrLogin)`
+  margin-left: 8px;
+  font-size: 20px;
+`;
+
+export const LogIn = styled(RiLoginBoxLine)`
+  margin-left: 8px;
+  font-size: 20px;
 `;

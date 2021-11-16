@@ -7,7 +7,11 @@ import {
   PopUpTitle,
   PopUpH1,
   PopUpFooter,
-  PopUpBtn,
+  PopUpBtn1,
+  PopUpBtn2,
+  LineLogout,
+  Logout,
+  PopUpP,
 } from "./PopUpElement";
 import AuthService from "../../services/auth.service";
 import { useHistory } from "react-router-dom";
@@ -16,9 +20,13 @@ const PopUp = (props) => {
   console.log(props, "props");
   let { currentUser, setCurrentUser } = props;
   let { open, setOpen } = props;
+  const [hover, setHover] = useState(false);
 
   const history = useHistory();
 
+  const onHover = () => {
+    setHover(!hover);
+  };
   const handleLogout = () => {
     AuthService.logout();
     // window.alert("Logout Successfully,now you are redirect to homepage ");
@@ -35,16 +43,17 @@ const PopUp = (props) => {
     <>
       <PopUpBackground>
         <PopUpContainer>
-          <PopUpCloseBtn>
-            <PopUpCloseBtn1 onClick={handleClose}>x</PopUpCloseBtn1>
-          </PopUpCloseBtn>
           <PopUpTitle>
-            <PopUpH1>Are You Sure To Logout?</PopUpH1>
+            {hover ? <LineLogout /> : <Logout />}
+            <PopUpH1> Sign Out</PopUpH1>
           </PopUpTitle>
-          <PopUpFooter>
-            <PopUpBtn onClick={handleClose}>Cancel</PopUpBtn>
-            <PopUpBtn onClick={handleLogout}>Sign Out</PopUpBtn>
-          </PopUpFooter>
+          <PopUpP>Are You Sure To Soign Out?</PopUpP>
+          {/* <PopUpFooter> */}
+          <PopUpBtn1 onClick={handleClose}>Cancel</PopUpBtn1>
+          <PopUpBtn2 onClick={handleLogout} onMouseEnter={onHover} onMouseLeave={onHover}>
+            Sign Out
+          </PopUpBtn2>
+          {/* </PopUpFooter> */}
         </PopUpContainer>
       </PopUpBackground>
     </>

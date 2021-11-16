@@ -49,18 +49,57 @@ export const VideoBg = styled.video`
 export const HeroContent = styled.div`
   z-index: 3;
   max-width: 1200px;
-  position: absolute;
-  padding: 8px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* position: absolute; */
+  /* padding: 8px 24px; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 `;
 
 export const HeroH1 = styled.h1`
   color: #fff;
-  font-size: 48px;
-  font-family: Andale Mono;
-  text-align: center;
+  font-size: 5rem;
+  margin-bottom: -1rem;
+  /* margin-left: -10; */
+  /* font-weight: bold; */
+  /* font-family: Moovdo; */
+  /* text-align: center; */
+
+  letter-spacing: 2px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
+export const HeroH2 = styled.h2`
+  display: inline;
+  color: #fff;
+  font-size: 6rem;
+  font-weight: bold;
+  /* font-family: Andale Mono; */
+  /* text-align: center; */
+  letter-spacing: 2px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
+export const HeroH3 = styled.h3`
+  color: #fff;
+  font-size: 60px;
+  margin-top: -30px;
+  /* font-weight: bold; */
+  /* font-family: Andale Mono; */
+  /* text-align: center; */
+  letter-spacing: 2px;
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -75,7 +114,7 @@ export const HeroP = styled.p`
   margin-top: 24px;
   color: #fff;
   font-size: 24px;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   text-align: center;
   max-width: 600px;
 
@@ -90,9 +129,9 @@ export const HeroP = styled.p`
 
 export const HeroBtnWrapper = styled.div`
   margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 `;
 
 export const ArrowForward = styled(MdArrowForward)`
@@ -106,15 +145,17 @@ export const ArrowRight = styled(MdKeyboardArrowRight)`
 `;
 
 export const Button = styled(Link)`
-  border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#2D6673" : "#7C9AA6 ")};
+  border-radius: 20px;
+  background: ${({ primary }) => (primary ? "#FF8154" : "#4AB29C ")};
 
   white-space: nowrap;
-  padding: ${({ big }) => (big ? "14px 48px " : "30px 12px ")};
+  /* padding: ${({ big }) => (big ? "14px 48px " : "30px 12px ")}; */
+  padding: 1rem 0.5rem;
 
-  color: ${({ dark }) => (dark ? "#010606" : "#fff")};
+  color: ${({ dark }) => (dark ? "#322B29" : "#fff")};
   font-size: ${({ fontBig }) => (fontBig ? "10px" : "20px")};
-  font-family: Andale Mono;
+  font-weight: bold;
+  /* font-family: Andale Mono; */
   outline: none;
   border: none;
   cursor: pointer;
@@ -126,7 +167,8 @@ export const Button = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#9FB6BF" : "#1F2326")};
+    background: ${({ primary }) => (primary ? "#de7049" : "#409c88")};
+    color: ${({ dark }) => (dark ? "#fff" : "#322B29")};
   }
 `;
 // export const InfoContainer = styled.div`
@@ -139,16 +181,17 @@ export const Button = styled(Link)`
 // `;
 
 export const InfoContainer1 = styled.div`
-  color: #80a6a2;
-  background: #ccd9d7;
+  color: #322b29;
+  /* background: linear-gradient(108deg, #404040 0%, #8c8c8c 100%); */
+  background: linear-gradient(#f0f0f0, #bfbfbf);
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
 `;
 export const InfoContainer2 = styled.div`
-  color: #80a6a2;
-  background: #f9f9f9;
+  color: #a6a6a6;
+  background: linear-gradient(#8c8c8c, #bfbfbf);
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -218,7 +261,16 @@ export const TextWrapper = styled.div`
   padding-top: 0;
   padding-bottom: 60px;
 `;
-export const TopLine = styled.p`
+export const TopLine1 = styled.p`
+  color: #322b29;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`;
+export const TopLine2 = styled.p`
   color: #032026;
   font-size: 16px;
   line-height: 16px;
@@ -247,7 +299,7 @@ export const Heading1 = styled.h1`
   /* color: black; */
   line-height: 1.1;
   font-weight: 600;
-  color: #36594f;
+  color: #322b29;
 
   @media screen and (max-width: 480px) {
     font-size: 32px;
@@ -280,7 +332,7 @@ export const Subtitle1 = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: #010606;
+  color: #322b29;
 `;
 export const Subtitle2 = styled.p`
   max-width: 440px;
@@ -392,7 +444,7 @@ export const ServicesP = styled.p`
 
 export const LinkScroll = styled(LinkS)`
   color: #fff;
-  font-family: Andale Mono;
+  /* font-family: Andale Mono; */
   display: flex;
   align-items: center;
   text-decoration: none;

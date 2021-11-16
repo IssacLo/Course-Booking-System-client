@@ -15,6 +15,8 @@ import {
   VideoBg,
   HeroContent,
   HeroH1,
+  HeroH2,
+  HeroH3,
   HeroP,
   LinkScroll,
   HeroBtnWrapper,
@@ -29,7 +31,8 @@ import {
   Column1,
   Column2,
   TextWrapper,
-  TopLine,
+  TopLine1,
+  TopLine2,
   Heading1,
   Heading2,
   Subtitle1,
@@ -75,15 +78,17 @@ const InfoSection = ({
           <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
         </HeroBg>
         <HeroContent>
-          <HeroH1>Booking A Course Made Easy</HeroH1>
+          <HeroH1>Stay Hungry,</HeroH1>
+          <HeroH2>Stay Foolish.</HeroH2>
+
           {/* <HeroP>XXxXXXXxXxxxxx XXXXXXxx xXXXXXXX XXXXXXXXX</HeroP> */}
           <HeroBtnWrapper>
             <Button
               // to="about"
               onMouseEnter={onHover}
               onMouseLeave={onHover}
-              primary="true"
-              dark="true"
+              primary={primary ? 1 : 0}
+              dark={dark ? 1 : 0}
             >
               <LinkScroll
                 to="about"
@@ -103,8 +108,8 @@ const InfoSection = ({
           <InfoRow1>
             <Column1>
               <TextWrapper>
-                <TopLine>Learning System</TopLine>
-                <Heading1>"XXXXXXXXXXXX"</Heading1>
+                <TopLine1>Learning System</TopLine1>
+                <Heading1>Booking A Course May Easy</Heading1>
                 <Subtitle1>
                   This system is using React.js as front-end framework, and Node.js, MongoDB as
                 </Subtitle1>
@@ -138,7 +143,7 @@ const InfoSection = ({
           <InfoRow2>
             <Column1>
               <TextWrapper>
-                <TopLine>As an Instructor</TopLine>
+                <TopLine2>As an Instructor</TopLine2>
                 <Heading2>Post Your Course In Any Time</Heading2>
                 <Subtitle2>
                   TYou can become an instructor by registering as one, and start making online
@@ -174,7 +179,7 @@ const InfoSection = ({
           <InfoRow1>
             <Column1>
               <TextWrapper>
-                <TopLine>Learning System</TopLine>
+                <TopLine1>Learning System</TopLine1>
                 <Heading1>"XXXXXXXXXXXX"</Heading1>
                 <Subtitle1>
                   This system is using React.js as front-end framework, and Node.js, MongoDB as
@@ -187,9 +192,9 @@ const InfoSection = ({
                     spy={true}
                     exact="true"
                     offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
+                    primary={primary ? 0 : 1}
+                    dark={dark ? 0 : 1}
+                    dark2={dark2 ? 0 : 1}
                   >
                     Get Started
                   </Button>
@@ -229,7 +234,7 @@ const InfoSection = ({
           <InfoRow1>
             <Column1>
               <TextWrapper>
-                <TopLine>Learning System</TopLine>
+                <TopLine1>Learning System</TopLine1>
                 <Heading1>"XXXXXXXXXXXX"</Heading1>
                 <Subtitle1>
                   This system is using React.js as front-end framework, and Node.js, MongoDB as

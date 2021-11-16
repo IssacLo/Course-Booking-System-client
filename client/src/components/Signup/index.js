@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 import { ImWarning } from "react-icons/im";
+
 import { MdOutlineDone } from "react-icons/md";
 
 import {
@@ -29,6 +30,7 @@ import {
   FormSelect,
   Text,
   SignIn,
+  LinkScroll,
 } from "./SignupElement";
 
 const SignUp = () => {
@@ -120,7 +122,7 @@ const SignUp = () => {
           <Icon to="/">Coursement</Icon>
           <FormContent>
             <Form>
-              <FormH1>Create your new account</FormH1>
+              <FormH1>Create your account</FormH1>
               <FormLabel htmlFor="username">User Name</FormLabel>
               <FormInput
                 onChange={handleChangeUsername}

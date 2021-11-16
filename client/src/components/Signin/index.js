@@ -135,7 +135,7 @@ const SignIn = (props) => {
           <Icon to="/">Coursement</Icon>
           <FormContent>
             <Form>
-              <FormH1>Sign in to your account </FormH1>
+              <FormH1>Sign In</FormH1>
 
               <FormLabel htmlFor="username">Email</FormLabel>
               <FormInput

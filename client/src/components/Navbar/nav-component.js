@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
+// import { MdOutlineLogout } from "react-icons/md";
+// import { MdLogout } from "react-icons/md";
 import PopUp from "../PopUp";
 import AuthService from "../../services/auth.service";
 import { animateScroll as scroll } from "react-scroll";
@@ -17,6 +19,11 @@ import {
   NavBtn1,
   NavBtnLink,
   NavBtnLink1,
+  LinkScroll,
+  LineLogout,
+  Logout,
+  LineLogIn,
+  LogIn,
   PopUpContainer,
 } from "./navcss";
 
@@ -24,13 +31,16 @@ const NavComponent = (props) => {
   let { currentUser, setCurrentUser } = props;
   let toggle = props.toggle;
   let [open, setOpen] = useState(false);
-
+  const [hover, setHover] = useState(false);
   const history = useHistory();
 
   const handleOpen = () => {
     setOpen(true);
   };
 
+  const onHover = () => {
+    setHover(!hover);
+  };
   const handleLogout = () => {
     AuthService.logout();
     // window.alert("Logout Successfully,now you are redirect to homepage ");
@@ -135,7 +145,9 @@ const NavComponent = (props) => {
           )}
           {!currentUser && (
             <NavBtn>
-              <NavBtnLink to="/signin">Sign In</NavBtnLink>
+              <NavBtnLink to="/signin" onMouseEnter={onHover} onMouseLeave={onHover}>
+                Sign In {hover ? <LineLogIn /> : <LogIn />}
+              </NavBtnLink>
             </NavBtn>
           )}
 
@@ -168,9 +180,9 @@ const NavComponent = (props) => {
             </NavMenu>
           )}
           {currentUser && (
-            <NavBtn1 onClick={handleOpen}>
+            <NavBtn1 onClick={handleOpen} onMouseEnter={onHover} onMouseLeave={onHover}>
               {/* <NavBtnLink onClick={handleOpen} to=""> */}
-              Sign Out
+              Sign Out {hover ? <LineLogout /> : <Logout />}
               {/* </NavBtnLink> */}
             </NavBtn1>
           )}

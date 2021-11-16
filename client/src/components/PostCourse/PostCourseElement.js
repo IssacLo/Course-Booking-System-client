@@ -158,22 +158,25 @@ export const PostCourseContent = styled.div`
 `;
 
 export const PostCourseForm = styled.form`
-  background: black;
+  background: #ffbb2b;
   max-width: 500px;
   height: auto;
   width: 100%;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
-  border-radius: 4px;
+  padding: 30px 32px;
+  border: 2px solid #ef3f41;
+  border-radius: 15px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   z-index: 0;
 `;
 
 export const PostCourseH1 = styled.h1`
-  font-size: 20px;
-  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: left;
   color: white;
+  margin-bottom: 1rem;
 `;
 
 export const PostCourseLabel = styled.label`
@@ -184,15 +187,18 @@ export const PostCourseLabel = styled.label`
 export const PostCourseInput = styled.input`
   padding: 10px 10px;
   margin-bottom: 14px;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid gray;
+  border-radius: 7px;
+  background: #4ab29c;
 `;
 
 export const PostCourseText = styled.textarea`
   padding: 10px 10px;
   margin-bottom: 14px;
-  border: none;
-  border-radius: 4px;
+
+  border: 1px solid gray;
+  border-radius: 7px;
+  background: #4ab29c;
 `;
 
 export const PostCourseBtn = styled.button`
