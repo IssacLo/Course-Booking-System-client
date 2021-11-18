@@ -361,17 +361,17 @@ export const MsgWrap = styled.div`
   position: absolute;
   flex-direction: column;
   z-index: 1; */
-  height: 15rem;
+  /* height: 15rem;
   min-width: 35rem;
-  max-width: 30rem;
-  background: red;
-  margin-left: 30px;
+  max-width: 30rem; */
+  /* background: red; */
+  /* margin-left: 30px;
   margin-right: 30px;
   margin-top: 20px;
   margin-bottom: 10px;
 
   border-radius: 30px;
-  border: 2px solid black;
+  border: 2px solid black; */
 `;
 export const MsgDiv = styled.div`
   /* justify-content: center;

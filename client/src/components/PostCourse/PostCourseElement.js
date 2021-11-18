@@ -12,8 +12,41 @@ export const Container = styled.div`
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(76, 114, 127, 1) 100%);
 `;
 
-export const TakeToLogin = styled.div`
+export const ErrorWrap = styled.div`
   margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const ImgWrap = styled.div`
+  /* align-items: center; */
+  max-width: 555px;
+  height: 100%;
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding-right: 0;
+`;
+
+export const ErrorP = styled.p`
+  font-size: 1.2rem;
+`;
+
+export const ErrorBtn = styled.button`
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: #4ab29c;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 10px;
+
+  :hover {
+    background-color: #3f9986;
+  }
 `;
 
 export const MsgWrap = styled.div`

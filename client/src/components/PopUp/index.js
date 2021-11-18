@@ -47,7 +47,7 @@ const PopUp = (props) => {
             {hover ? <LineLogout /> : <Logout />}
             <PopUpH1> Sign Out</PopUpH1>
           </PopUpTitle>
-          <PopUpP>Are You Sure To Soign Out?</PopUpP>
+          <PopUpP>Are You Sure To Sign Out?</PopUpP>
           {/* <PopUpFooter> */}
           <PopUpBtn1 onClick={handleClose}>Cancel</PopUpBtn1>
           <PopUpBtn2 onClick={handleLogout} onMouseEnter={onHover} onMouseLeave={onHover}>

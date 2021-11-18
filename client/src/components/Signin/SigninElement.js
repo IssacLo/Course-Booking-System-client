@@ -10,7 +10,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   overflow: hidden;
-  background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(76, 114, 127, 1) 100%);
+  background: linear-gradient(108deg, #4ab29c 0%, #92ffe8 100%);
 `;
 
 // export const Wrapper = styled.div`
@@ -185,7 +185,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #010101;
+  background: #00264e;
   max-width: 400px;
   height: auto;
   width: 100%;
@@ -219,21 +219,22 @@ export const FormInput = styled.input`
   padding: 16px 16px;
   margin-bottom: 32px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   color: black;
 `;
 
 export const FormButton = styled.button`
   background: white;
   padding: 16px 0;
-  border: none;
-  border-radius: 4px;
-  color: black;
+  /* border: 1px solid #ffa100; */
+  border-radius: 10px;
+  color: #ffa100;
   font-size: 20px;
   cursor: pointer;
 
   :hover {
-    background-color: #4c727f;
+    background-color: #ffa100;
+    color: white;
   }
 `;
 

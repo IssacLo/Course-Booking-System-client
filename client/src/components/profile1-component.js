@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "../components/Profile";
+import Profile from "./Profile";
 
 const Profile1Component = (props) => {
   let { currentUser, setCurrentUser } = props;

@@ -25,15 +25,6 @@ import {
   EditText,
   EditDateWrap,
   EditDate,
-  // PostCourseContent,
-  // PostCourseForm,
-  // PostCourseH1,
-  // PostCourseLabel,
-  // PostCourseInput,
-  // PostCourseText,
-  // PostCourseDateWrap,
-  // PostCourseDate,
-  // PostCourseBtn,
   PopUpBackground,
   PopUpContainer,
   PopUpCloseBtn,
@@ -71,10 +62,10 @@ const Course = (props) => {
   let [studentCourses, setStudentCourses] = useState(null);
   let [messageError, setMessageError] = useState("");
   let [messageSuccess, setMessageSuccess] = useState("");
-  let [open, setOpen] = useState(false);
+  let [openDeleteStudent, setOpenDeleteStudent] = useState(false);
   let [save, setSave] = useState(false);
   let [openEdit, setOpenEdit] = useState(false);
-  let [openDelete, setOpenDelete] = useState(false);
+  let [openDeleteCourse, setOpenDeleteCourse] = useState(false);
   let [openSave, setOpenSave] = useState(false);
   let [openOne, setOpenOne] = useState(true);
   let [contin, setContin] = useState(false);
@@ -91,6 +82,7 @@ const Course = (props) => {
   };
 
   const handleChangeDescription = (e) => {
+    console.log("eeeee", e.target.value);
     setDescription(e.target.value);
     console.log(e.target.value, "descriotion");
   };
@@ -110,13 +102,13 @@ const Course = (props) => {
   const PopUpEdit = (e) => {
     // console.log(e.target.id, "e.target.id");
     setOpenEdit(true);
-    setOpenDelete(false);
+    setOpenDeleteCourse(false);
     setEdit(e.target.id);
     // setOpenSave(false);
   };
 
   const PopUpDeleteCourse = (e) => {
-    setOpenDelete(true);
+    setOpenDeleteCourse(true);
     setOpenEdit(false);
     setInstructorCourses(e.target.id);
   };
@@ -127,7 +119,7 @@ const Course = (props) => {
 
   const PopUpDeleteStudentCourse = (e) => {
     console.log(e.target, "PopUpDeleteStudentCourse");
-    setOpen(true);
+    setOpenDeleteStudent(true);
     setStudentCourses(e.target.id);
   };
 
@@ -137,16 +129,16 @@ const Course = (props) => {
   };
 
   const handleOpen = () => {
-    setOpen(true);
+    setOpenDeleteStudent(true);
   };
   const handleClose = () => {
-    setOpen(false);
+    setOpenDeleteStudent(false);
   };
   const handleCloseEdit = () => {
     setOpenEdit(false);
   };
   const handleCloseDelete = () => {
-    setOpenDelete(false);
+    setOpenDeleteCourse(false);
   };
   const handleCloseSave = () => {
     setOpenSave(false);
@@ -172,7 +164,7 @@ const Course = (props) => {
         // window.alert("Deleted");
 
         setMessageSuccess(data.data);
-        setOpen(false);
+        setOpenDeleteStudent(false);
         console.log(data, "data");
         setContin(true);
       })
@@ -181,7 +173,7 @@ const Course = (props) => {
       });
   };
 
-  const handleDelete = (e) => {
+  const handleDeleteCourse = (e) => {
     console.log("handleDelete working ");
     // console.log(e.target.id, "id");
     CourseService.deleteCourse(e.target.id)
@@ -190,7 +182,7 @@ const Course = (props) => {
         // window.alert("Deleted");
         // setOpen(true);
         setMessageSuccess(data.data);
-        setOpenDelete(false);
+        setOpenDeleteCourse(false);
         setContin(true);
         // history.go(0);
       })
@@ -291,7 +283,7 @@ const Course = (props) => {
           <h1>Welcome to student's Course page</h1>
         </div>
       )}
-      {currentUser && courseData && courseData.length != 0 && (
+      {currentUser && courseData && courseData.length && Array.isArray(courseData) != 0 && (
         <DivWrapper1>
           <DivWrapper2>
             {courseData.map((course) => (
@@ -305,7 +297,7 @@ const Course = (props) => {
                       name="title"
                       type="text"
                       id="exampleforTitle"
-                      defaultValue={course.title}
+                      value={course.title}
                       onChange={handleChangeTitle}
                     ></EditInputH5>
                   )}
@@ -345,14 +337,14 @@ const Course = (props) => {
                         id="exampleforContent"
                         aria-describedby="emailHelp"
                         name="content"
-                        defaultValue={course.description}
+                        value={course.description}
                         onChange={handleChangeDescription}
                       ></EditInput>
 
                       <EditInput
                         name="max"
                         type="number"
-                        defaultValue={course.max}
+                        value={course.max}
                         onChange={handleChangeMax}
                       ></EditInput>
                       <EditDateWrap>
@@ -410,10 +402,6 @@ const Course = (props) => {
                         Edit
                       </CourseBtn>
                     )}
-
-                  {/* {edit === course._id && course.students.length > 0 && openEdit && (
-                    <MsgWrap>hihi</MsgWrap>
-                  )} */}
 
                   {openEdit &&
                     edit !== course._id &&
@@ -503,7 +491,7 @@ const Course = (props) => {
               </PopUpContainer>
             </PopUpBackground>
           )}
-          {openDelete && (
+          {openDeleteCourse && (
             <PopUpBackground>
               <PopUpContainer>
                 <PopUpCloseBtn>
@@ -514,7 +502,7 @@ const Course = (props) => {
                 </PopUpTitle>
                 <PopUpFooter>
                   <PopUpBtn onClick={handleCloseDelete}>Cancel</PopUpBtn>
-                  <PopUpBtn onClick={handleDelete} id={instructorCourses}>
+                  <PopUpBtn onClick={handleDeleteCourse} id={instructorCourses}>
                     Delete
                   </PopUpBtn>
                 </PopUpFooter>
@@ -522,7 +510,7 @@ const Course = (props) => {
             </PopUpBackground>
           )}
 
-          {messageSuccess && contin && (
+          {/* {messageSuccess && contin && (
             <MsgWrap>
               <MsgDivOne>
                 <MsgIcon>
@@ -534,12 +522,12 @@ const Course = (props) => {
                 <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
               </MsgDivOne>
             </MsgWrap>
-          )}
+          )} */}
 
           {/* </CoursePwrap> */}
           {/* </DivWrapper3> */}
           {/* {open && studentCourses === course._id && ( */}
-          {open && (
+          {openDeleteStudent && (
             <PopUpBackground>
               <PopUpContainer>
                 <PopUpCloseBtn>
@@ -559,7 +547,6 @@ const Course = (props) => {
           )}
           {/* {messageSuccess && studentCourses === course._id && contin && ( */}
           {messageSuccess && contin && (
-            // <MsgContainer>
             <MsgWrap>
               <MsgDivOne>
                 <MsgIcon>
@@ -567,15 +554,9 @@ const Course = (props) => {
                   <MsgH1>Success !</MsgH1>
                 </MsgIcon>
                 <MsgP>{messageSuccess}</MsgP>
-                {/* <MsgBtn onClick={handleCloseOne}>x</MsgBtn> */}
-                {/* <MsgBtnDiv> */}
-                {/* <MsgBtn1 onClick={handleAgain}>Post Course Again</MsgBtn1> */}
                 <MsgBtn2 onClick={handleContinue}>Continue</MsgBtn2>
-
-                {/* </MsgBtnDiv> */}
               </MsgDivOne>
             </MsgWrap>
-            // </MsgContainer>
           )}
           {messageSuccess && editContin && (
             // <MsgContainer>

@@ -29,12 +29,12 @@ export const PopUpContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 25px; */
-  height: 10rem;
-  width: 25rem;
-  border: 1px solid white;
-  border-radius: 10px;
+  height: 12rem;
+  width: 27rem;
+  /* border: 1px solid #ffbb2b; */
+  border-radius: 15px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-  background: white;
+  background: #00264e;
 `;
 
 export const PopUpCloseBtn = styled.div`
@@ -55,22 +55,26 @@ export const PopUpCloseBtn1 = styled.button`
 
 export const PopUpTitle = styled.div`
   display: flex;
+  color: #fff;
   font-size: 2rem;
   font-weight: bold;
   /* border: 1px solid black;
   border-radius: 50%; */
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-left: 2rem;
 `;
 
 export const PopUpH1 = styled.h1`
   /* display: flex; */
   margin-left: 1.5rem;
-  top: 1rem;
+  /* margin-top: -1rem; */
+  font-size: 1.7rem;
+  font-weight: bold;
 `;
 export const PopUpP = styled.p`
   margin-left: 5.5rem;
   font-size: 0.9rem;
+  color: #fff;
 `;
 
 export const PopUpFooter = styled.div`
@@ -82,50 +86,58 @@ export const PopUpFooter = styled.div`
 
 export const PopUpBtn1 = styled.button`
   /* display: inline; */
-  margin-left: 4rem;
+  margin-top: 0.5rem;
+  margin-left: 6rem;
   /* margin-top: 1rem; */
-  color: black;
+  color: #4ab29c;
   font-weight: bold;
   /* float: right; */
   /* font-size: 22px; */
   /* line-height: 5px; */
   cursor: pointer;
   transition: 0.1s;
-  border: 1px solid black;
+  /* border: 2px solid #4ab29c; */
+  border: none;
   border-radius: 4px;
-  padding: 0.1rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 
   :hover {
     color: white;
-    background-color: black;
+    background-color: #4ab29c;
   }
 `;
 export const PopUpBtn2 = styled.button`
   /* display: inline; */
-  margin-left: 1rem;
+  margin-left: 2rem;
   /* margin-top: 0.2rem; */
-  color: black;
+  color: #4ab29c;
   font-weight: bold;
+  /* background-color: #4ab29c; */
   /* float: right; */
   /* font-size: 22px; */
   /* line-height: 5px; */
   cursor: pointer;
   transition: 0.1s;
-  border: 1px solid black;
+  /* border: 2px solid #4ab29c; */
+  border: none;
   border-radius: 4px;
-  padding: 0.1rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 
   :hover {
     color: white;
-    background-color: black;
+    background-color: #4ab29c;
   }
 `;
-export const LineLogout = styled(GrLogout)`
+export const Logout = styled(GrLogout)`
   /* margin-left: 8px; */
   /* font-size: 20px; */
+  color: #fff;
 `;
 
-export const Logout = styled(RiLogoutBoxRLine)`
+export const LineLogout = styled(RiLogoutBoxRLine)`
   /* margin-left: 8px; */
   /* font-size: 20px; */
+  color: #fff;
 `;

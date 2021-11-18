@@ -17,6 +17,7 @@ import InstructorProfileComponent from "./components/instructorProfile-component
 import SignUpStudentComponent from "./components/signupstudent-componet";
 import Profile1Component from "./components/profile1-component";
 import Course1Component from "./components/course1-component";
+import ErrorComponent from "./components/error-component";
 // import SignIn from "./components/Signin";
 import AuthService from "./services/auth.service";
 import SideBar from "./components/Sidebar";
@@ -87,6 +88,12 @@ function App() {
         </Route>
         <Route path="/enroll1" exact>
           <EnrollComponent1 currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        </Route>
+        <Route path="/enroll1" exact>
+          <EnrollComponent1 currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        </Route>
+        <Route path="*">
+          <ErrorComponent />
         </Route>
       </Switch>
       <Footer />

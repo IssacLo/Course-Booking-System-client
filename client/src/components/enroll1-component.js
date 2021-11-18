@@ -1,5 +1,5 @@
 import React from "react";
-import Enroll from "../components/Enroll";
+import Enroll from "./Enroll";
 
 const EnrollComponent1 = (props) => {
   let { currentUser, setCurrentUser } = props;

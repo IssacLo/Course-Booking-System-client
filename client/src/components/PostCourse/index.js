@@ -3,13 +3,18 @@ import { useHistory } from "react-router-dom";
 import { ImWarning } from "react-icons/im";
 import { MdOutlineDone } from "react-icons/md";
 import CourseService from "../../services/course.service";
+import Icon1 from "../images/svg-7.svg";
 // import DateRangePicker from "react-date-range";
 // import "react-date-range/dist/styles.css";
 // import "react-date-range/dist/theme/default.css";
 
 import {
   Container,
-  TakeToLogin,
+  ErrorWrap,
+  ImgWrap,
+  Img,
+  ErrorP,
+  ErrorBtn,
   MsgWrap,
   MsgDiv,
   MsgDivOne,
@@ -102,20 +107,20 @@ const PostCourse = (props) => {
   return (
     <>
       <Container>
-        {/* {!currentUser && (
-          <TakeToLogin>
-            <p>You must login first before posting a new course.</p>
-            <button className="btn btn-primary btn-lg" onClick={handleTakeToLogin}>
-              Take me to signin page.
-            </button>
-          </TakeToLogin>
+        {!currentUser && (
+          <ErrorWrap>
+            <ImgWrap>
+              <Img src={Icon1} alt="PostCourse" />
+            </ImgWrap>
+            <ErrorP>You must login first before posting a new course.</ErrorP>
+            <ErrorBtn onClick={handleTakeToLogin}>Take Me To Sign In Page.</ErrorBtn>
+          </ErrorWrap>
         )}
         {currentUser && currentUser.user.role !== "instructor" && (
           <div>
             <p>Only instrcutors can post new courses.</p>
           </div>
-        )} */}
-
+        )}
         <PostCourseWrap>
           {messageError && open && (
             // <MsgContainer>
