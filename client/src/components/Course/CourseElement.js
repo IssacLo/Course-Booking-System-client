@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   min-height: 1000px;
-  background: #fff;
+  background: linear-gradient(#f0f0f0, #bfbfbf);
+  /* position: relative; */
 `;
 
 export const DivWrapper1 = styled.div`
-  /* display: inline-flex; */
+  /* display: flex; */
+  /* position: relative; */
 `;
 
 export const DivWrapper2 = styled.div`
@@ -15,7 +17,9 @@ export const DivWrapper2 = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
   z-index: 0;
+
   /* border: 1 solid red; */
   /* height: auto; */
   /* width: auto; */
@@ -28,16 +32,8 @@ export const DivWrapper3 = styled.div`
 `;
 
 export const CourseWrapper = styled.div`
-  /* display: inline; */
-  /* height: 100%; */
-  /* width: 20rem; */
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start; */
-  /* margin-left: 50px; */
-  /* z-index: 0; */
+  position: relative;
+  z-index: 0;
 `;
 
 export const CourseWrap = styled.div`
@@ -69,24 +65,9 @@ export const CourseWrap = styled.div`
 
   border-radius: 30px;
   border: 2px solid black;
+  position: relative;
+  z-index: 0;
 `;
-
-// export const CourseRow = styled.div`
-//   /* display: flex; */
-//   /* justify-content: flex-start;
-//   align-items: flex-start; */
-//   height: 15rem;
-//   min-width: 35rem;
-//   max-width: 30rem;
-//   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
-//   margin-left: 30px;
-//   margin-right: 30px;
-//   margin-top: 20px;
-//   margin-bottom: 10px;
-
-//   border-radius: 30px;
-//   border: 2px solid black;
-// `;
 
 export const CourseH5 = styled.h5`
   /* display: flex;
@@ -290,19 +271,19 @@ export const PopUpBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 3rem;
-  z-index: 1;
+
+  /* margin-bottom: 10rem; */
+  /* top: 3rem; */
+  z-index: 2;
 `;
 export const PopUpContainer = styled.div`
-  width: auto;
-  height: auto;
-  border-radius: 12px;
-  background-color: white;
-
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
+  height: 12rem;
+  width: 27rem;
+  /* border: 1px solid #ffbb2b; */
+  border-radius: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  background: #00264e;
+  /* margin-bottom: 10rem; */
 `;
 
 export const PopUpCloseBtn = styled.div`
@@ -322,12 +303,75 @@ export const PopUpCloseBtn1 = styled.button`
 `;
 
 export const PopUpTitle = styled.div`
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  /* border: 1px solid black;
+  border-radius: 50%; */
+  margin-top: 3rem;
+  margin-left: 2rem;
 `;
 
-export const PopUpH1 = styled.h1``;
+export const PopUpH1 = styled.h1`
+  /* display: flex; */
+  margin-left: 3.5rem;
+  /* margin-top: -1rem; */
+  font-size: 1.7rem;
+  font-weight: bold;
+`;
+export const PopUpP = styled.p`
+  margin-left: 5.5rem;
+  font-size: 0.9rem;
+  color: #fff;
+`;
+
+export const PopUpBtn1 = styled.button`
+  /* display: inline; */
+  margin-top: 0.5rem;
+  margin-left: 6rem;
+  /* margin-top: 1rem; */
+  color: #4ab29c;
+  font-weight: bold;
+  /* float: right; */
+  /* font-size: 22px; */
+  /* line-height: 5px; */
+  cursor: pointer;
+  transition: 0.1s;
+  /* border: 2px solid #4ab29c; */
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #4ab29c;
+  }
+`;
+export const PopUpBtn2 = styled.button`
+  /* display: inline; */
+  margin-left: 2rem;
+  /* margin-top: 0.2rem; */
+  color: #4ab29c;
+  font-weight: bold;
+  /* background-color: #4ab29c; */
+  /* float: right; */
+  /* font-size: 22px; */
+  /* line-height: 5px; */
+  cursor: pointer;
+  transition: 0.1s;
+  /* border: 2px solid #4ab29c; */
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #4ab29c;
+  }
+`;
 
 export const PopUpFooter = styled.div`
   flex: 20%;
@@ -355,11 +399,12 @@ export const PopUpBtn = styled.button`
 export const MsgWrap = styled.div`
   /* height: 100%; */
   /* width: 100%; */
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  flex-direction: column;
+  z-index: 2;
+  /* position: absolute; */
+  /* flex-direction: column;
   z-index: 1; */
   /* height: 15rem;
   min-width: 35rem;

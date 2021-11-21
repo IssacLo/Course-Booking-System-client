@@ -3,8 +3,8 @@ import { GrLogout, GrLogin } from "react-icons/gr";
 import { RiLogoutBoxRLine, RiLoginBoxLine } from "react-icons/ri";
 
 export const PopUpBackground = styled.div`
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   /* background-color: rgba(200, 200, 200);
   position: fixed;
   display: flex;
@@ -18,6 +18,18 @@ export const PopUpBackground = styled.div`
   position: absolute;
   flex-direction: column;
   z-index: 1;
+
+  /* :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+    z-index: 2;
+  } */
 `;
 export const PopUpContainer = styled.div`
   /* width: auto;

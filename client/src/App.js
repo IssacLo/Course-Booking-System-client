@@ -40,7 +40,7 @@ function App() {
       {/* <HeroSection /> */}
       <Switch>
         <Route path="/" exact>
-          <HomeComponent />
+          <HomeComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/about" exact>
           <AboutComponent />
@@ -65,30 +65,30 @@ function App() {
           <SignInComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
 
-        <Route path="/profile" exact>
+        {/* <Route path="/profile" exact>
           <ProfileComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        </Route>
+        </Route> */}
         <Route path="/profile1" exact>
           <Profile1Component currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
-        <Route path="/course" exact>
+        {/* <Route path="/course" exact>
           <CourseComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        </Route>
+        </Route> */}
         <Route path="/course1" exact>
           <Course1Component currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
-        <Route path="/postCourse" exact>
+        {/* <Route path="/postCourse" exact>
           <PostCourseComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        </Route>
+        </Route> */}
         <Route path="/postCourse1" exact>
           <PostCourse1Component currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
-        <Route path="/enroll" exact>
+        {/* <Route path="/enroll" exact>
           <EnrollComponent currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/enroll1" exact>
           <EnrollComponent1 currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        </Route>
+        </Route> */}
         <Route path="/enroll1" exact>
           <EnrollComponent1 currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>

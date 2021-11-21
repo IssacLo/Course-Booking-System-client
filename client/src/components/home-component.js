@@ -6,8 +6,9 @@ import Services from "./Services1";
 import SideBar from "./Sidebar";
 
 import NavComponent from "../components/Navbar/nav-component";
-const HomeComponent = () => {
+const HomeComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { currentUser, setCurrentUser } = props;
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -18,7 +19,7 @@ const HomeComponent = () => {
       {/* <SideBar isOpen={isOpen} toggle={toggle} /> */}
       {/* <NavComponent toggle={toggle} /> */}
       {/* <HeroSection /> */}
-      <InfoSection />
+      <InfoSection currentUser={currentUser} setCurrentUser={setCurrentUser} />
       {/* <InfoSection {...homeObjTwo} />
       <InfoSection {...homeObjThree} />
       <Services />

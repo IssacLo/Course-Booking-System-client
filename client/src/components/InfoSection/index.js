@@ -65,6 +65,8 @@ const InfoSection = ({
   dark,
   dark2,
   to,
+  currentUser,
+  setCurrentUser,
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -114,19 +116,21 @@ const InfoSection = ({
                   This system is using React.js as front-end framework, and Node.js, MongoDB as
                 </Subtitle1>
                 <BtnWrap>
-                  <Button
-                    to="/signup"
-                    smooth={true}
-                    duration={550}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 0 : 1}
-                    dark={dark ? 0 : 1}
-                    dark2={dark2 ? 0 : 1}
-                  >
-                    Get Started
-                  </Button>
+                  {!currentUser && (
+                    <Button
+                      to="/signup"
+                      smooth={true}
+                      duration={550}
+                      spy={true}
+                      exact="true"
+                      offset={-80}
+                      primary={primary ? 0 : 1}
+                      dark={dark ? 0 : 1}
+                      dark2={dark2 ? 0 : 1}
+                    >
+                      Get Started
+                    </Button>
+                  )}
                 </BtnWrap>
               </TextWrapper>
             </Column1>
@@ -150,19 +154,21 @@ const InfoSection = ({
                   courses
                 </Subtitle2>
                 <BtnWrap>
-                  <Button
-                    to="/signup"
-                    smooth={true}
-                    duration={550}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    Start Now
-                  </Button>
+                  {!currentUser && (
+                    <Button
+                      to="/signup"
+                      smooth={true}
+                      duration={550}
+                      spy={true}
+                      exact="true"
+                      offset={-80}
+                      primary={primary ? 1 : 0}
+                      dark={dark ? 1 : 0}
+                      dark2={dark2 ? 1 : 0}
+                    >
+                      Start Now
+                    </Button>
+                  )}
                 </BtnWrap>
               </TextWrapper>
             </Column1>
@@ -185,19 +191,21 @@ const InfoSection = ({
                   This system is using React.js as front-end framework, and Node.js, MongoDB as
                 </Subtitle1>
                 <BtnWrap>
-                  <Button
-                    to="/signup"
-                    smooth={true}
-                    duration={550}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 0 : 1}
-                    dark={dark ? 0 : 1}
-                    dark2={dark2 ? 0 : 1}
-                  >
-                    Get Started
-                  </Button>
+                  {!currentUser && (
+                    <Button
+                      to="/signup"
+                      smooth={true}
+                      duration={550}
+                      spy={true}
+                      exact="true"
+                      offset={-80}
+                      primary={primary ? 0 : 1}
+                      dark={dark ? 0 : 1}
+                      dark2={dark2 ? 0 : 1}
+                    >
+                      Get Started
+                    </Button>
+                  )}
                 </BtnWrap>
               </TextWrapper>
             </Column1>
@@ -240,19 +248,21 @@ const InfoSection = ({
                   This system is using React.js as front-end framework, and Node.js, MongoDB as
                 </Subtitle1>
                 <BtnWrap>
-                  <Button
-                    to="/signup"
-                    smooth={true}
-                    duration={550}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    Get Started
-                  </Button>
+                  {!currentUser && (
+                    <Button
+                      to="/signup"
+                      smooth={true}
+                      duration={550}
+                      spy={true}
+                      exact="true"
+                      offset={-80}
+                      primary={primary ? 1 : 0}
+                      dark={dark ? 1 : 0}
+                      dark2={dark2 ? 1 : 0}
+                    >
+                      Get Started
+                    </Button>
+                  )}
                 </BtnWrap>
               </TextWrapper>
             </Column1>

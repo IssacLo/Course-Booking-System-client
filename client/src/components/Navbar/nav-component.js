@@ -24,7 +24,16 @@ import {
   Logout,
   LineLogIn,
   LogIn,
+  PopUpBackground,
   PopUpContainer,
+  PopUpCloseBtn,
+  PopUpCloseBtn1,
+  PopUpTitle,
+  PopUpH1,
+  PopUpFooter,
+  PopUpBtn1,
+  PopUpBtn2,
+  PopUpP,
 } from "./navcss";
 
 const NavComponent = (props) => {
@@ -41,11 +50,17 @@ const NavComponent = (props) => {
   const onHover = () => {
     setHover(!hover);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleLogout = () => {
     AuthService.logout();
     // window.alert("Logout Successfully,now you are redirect to homepage ");
     setCurrentUser(null);
     history.push("/");
+    setOpen(false);
   };
 
   const [scrollNav, setScrollNav] = useState(false);
@@ -70,9 +85,16 @@ const NavComponent = (props) => {
     <>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo to="/" onClick={toggleHome}>
-            Cousement
-          </NavLogo>
+          {!currentUser && (
+            <NavLogo to="/" onClick={toggleHome}>
+              Cousement
+            </NavLogo>
+          )}
+          {currentUser && (
+            <NavLogo to="/" onClick={toggleHome}>
+              Cousement
+            </NavLogo>
+          )}
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
@@ -186,76 +208,25 @@ const NavComponent = (props) => {
               {/* </NavBtnLink> */}
             </NavBtn1>
           )}
-          {open && <PopUp setOpen={setOpen} setCurrentUser={setCurrentUser} />}
         </NavbarContainer>
+        {open && (
+          <PopUpBackground>
+            <PopUpContainer>
+              <PopUpTitle>
+                {/* <Logout /> */}
+                <PopUpH1> Sign Out</PopUpH1>
+              </PopUpTitle>
+              <PopUpP>Are You Sure To Sign Out?</PopUpP>
+              {/* <PopUpFooter> */}
+              <PopUpBtn1 onClick={handleClose}>Cancel</PopUpBtn1>
+              <PopUpBtn2 onClick={handleLogout}>Sign Out</PopUpBtn2>
+              {/* </PopUpFooter> */}
+            </PopUpContainer>
+            //{" "}
+          </PopUpBackground>
+        )}
       </Nav>
     </>
-    // <div>
-    //   <nav>
-    //     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    //       <div className="container-fluid">
-    //         <div className="collapse navbar-collapse" id="navbarNav">
-    //           <ul className="navbar-nav">
-    //             <li className="nav-item">
-    //               <Link className="nav-link active" to="/">
-    //                 Home
-    //               </Link>
-    //             </li>
-    //             {!currentUser && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/register">
-    //                   Register
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {!currentUser && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/login">
-    //                   Login
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {currentUser && (
-    //               <li className="nav-item">
-    //                 <Link onClick={handleLogout} className="nav-link" to="#">
-    //                   Logout
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {currentUser && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/profile">
-    //                   Profile
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {currentUser && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/course">
-    //                   My Course
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {currentUser && currentUser.user.role == "instructor" && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/postCourse">
-    //                   Post Course
-    //                 </Link>
-    //               </li>
-    //             )}
-    //             {currentUser && currentUser.user.role == "student" && (
-    //               <li className="nav-item">
-    //                 <Link className="nav-link" to="/enroll">
-    //                   Enroll
-    //                 </Link>
-    //               </li>
-    //             )}
-    //           </ul>
-    //         </div>
-    //       </div>
-    //     </nav>
-    //   </nav>
-    // </div>
   );
 };
 

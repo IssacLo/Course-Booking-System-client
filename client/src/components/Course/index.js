@@ -31,6 +31,9 @@ import {
   PopUpCloseBtn1,
   PopUpTitle,
   PopUpH1,
+  PopUpP,
+  PopUpBtn1,
+  PopUpBtn2,
   PopUpFooter,
   PopUpBtn,
   MsgWrap,
@@ -49,33 +52,30 @@ import {
 import { connect } from "mongoose";
 
 const Course = (props) => {
-  let { currentUser, setCurrentUser } = props;
-  let [courseData, setCourseData] = useState(null);
-  let [editData, setEditData] = useState(null);
-  let [title, setTitle] = useState("");
-  let [description, setDescription] = useState("");
-  let [max, setMax] = useState(0);
-  let [price, setPrice] = useState(0);
-  let [startDate, setStartDate] = useState("");
-  let [edit, setEdit] = useState(null);
-  let [instructorCourses, setInstructorCourses] = useState(null);
-  let [studentCourses, setStudentCourses] = useState(null);
-  let [messageError, setMessageError] = useState("");
-  let [messageSuccess, setMessageSuccess] = useState("");
-  let [openDeleteStudent, setOpenDeleteStudent] = useState(false);
-  let [save, setSave] = useState(false);
-  let [openEdit, setOpenEdit] = useState(false);
-  let [openDeleteCourse, setOpenDeleteCourse] = useState(false);
-  let [openSave, setOpenSave] = useState(false);
-  let [openOne, setOpenOne] = useState(true);
-  let [contin, setContin] = useState(false);
-  let [editContin, setEditContin] = useState(false);
-  let [continBtn, setContinBtn] = useState("");
+  const { currentUser, setCurrentUser } = props;
+  const [courseData, setCourseData] = useState(null);
+  const [editData, setEditData] = useState(null);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [max, setMax] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [startDate, setStartDate] = useState("");
+  const [edit, setEdit] = useState(null);
+  const [instructorCourses, setInstructorCourses] = useState(null);
+  const [studentCourses, setStudentCourses] = useState(null);
+  const [messageError, setMessageError] = useState("");
+  const [messageSuccess, setMessageSuccess] = useState("");
+  const [openDeleteStudent, setOpenDeleteStudent] = useState(false);
+  const [save, setSave] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
+  const [openDeleteCourse, setOpenDeleteCourse] = useState(false);
+  const [openSave, setOpenSave] = useState(false);
+  const [openOne, setOpenOne] = useState(true);
+  const [contin, setContin] = useState(false);
+  const [editContin, setEditContin] = useState(false);
+  const [continBtn, setContinBtn] = useState("");
   const history = useHistory();
 
-  // const handleTakeToLogin = () => {
-  //   history.push("/login");
-  // };
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
     console.log(e.target.value, "title");
@@ -250,15 +250,6 @@ const Course = (props) => {
         .catch((err) => {
           console.log(err);
         });
-
-      // CourseService.updateCourse(_id)
-      //   .then((data) => {
-      //     console.log(data);
-      //     setCourseData(data.data);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
     } else if (currentUser.user.role == "student") {
       CourseService.getEnrolledCourses(_id)
         .then((data) => {
@@ -275,76 +266,76 @@ const Course = (props) => {
     <Container>
       {currentUser && currentUser.user.role == "instructor" && (
         <div>
-          <h1>Welcome to instructor's Course page</h1>
+          <h1>Instructor's Course page</h1>
         </div>
       )}
       {currentUser && currentUser.user.role == "student" && (
         <div>
-          <h1>Welcome to student's Course page</h1>
+          <h1>Student's Course page</h1>
         </div>
       )}
-      {currentUser && courseData && courseData.length && Array.isArray(courseData) != 0 && (
+      {currentUser && courseData && Array.isArray(courseData) && (
         <DivWrapper1>
           <DivWrapper2>
             {courseData.map((course) => (
               <CourseWrapper>
                 <CourseWrap id={course._id}>
                   {/* <CourseRow> */}
-                  {!openEdit && <CourseH5>{course.title}</CourseH5>}
-                  {openEdit && edit !== course._id && <CourseH5>{course.title}</CourseH5>}
-                  {openEdit && edit === course._id && (
-                    <EditInputH5
-                      name="title"
-                      type="text"
-                      id="exampleforTitle"
-                      value={course.title}
-                      onChange={handleChangeTitle}
-                    ></EditInputH5>
-                  )}
-                  {currentUser && currentUser.user.role == "student" && (
-                    <Link to={`/instructorprofile/${course.instructor._id}`}>
-                      <CourseP>Instructor: {course.instructor.username}</CourseP>
-                    </Link>
-                  )}
-                  {!openEdit && <CourseP>{course.description}</CourseP>}
-                  {openEdit && edit !== course._id && <CourseP>{course.description}</CourseP>}
                   {!openEdit && (
-                    <CourseP>
-                      Student Count: {course.students.length}/{course.max}
-                    </CourseP>
+                    <div>
+                      <CourseH5>{course.title}</CourseH5>
+                      <CourseP>{course.description}</CourseP>
+                      <CourseP>
+                        Student Count: {course.students.length}/{course.max}
+                      </CourseP>
+                      <CourseP>Price: ${course.price}</CourseP>
+                      <CourseP>Start: {course.startDate}</CourseP>
+                    </div>
+                  )}
+                  {currentUser.user.role == "student" && (
+                    <div>
+                      <Link to={`/instructorprofile/${course.instructor._id}`}>
+                        <CourseP>Instructor: {course.instructor.username}</CourseP>
+                      </Link>
+                      <CourseBtn onClick={PopUpDeleteStudentCourse} id={course._id}>
+                        <AiFillDelete />
+                        Delete
+                      </CourseBtn>
+                    </div>
                   )}
                   {openEdit && edit !== course._id && (
-                    <CourseP>
-                      Student Count: {course.students.length}/{course.max}
-                    </CourseP>
+                    <div>
+                      <CourseH5>{course.title}</CourseH5>
+                      <CourseP>{course.description}</CourseP>
+                      <CourseP>
+                        Student Count: {course.students.length}/{course.max}
+                      </CourseP>
+                      <CourseP>Price: ${course.price}</CourseP>
+                      <CourseP>Start: {course.startDate}</CourseP>
+                    </div>
                   )}
-                  {/* {currentUser && currentUser.user.role == "instructor" && (
-                  <CourseP>
-                    {course.students.map((k) => {
-                      <CourseP>Students:{k.username}</CourseP>;
-                    })}
-                  </CourseP>
-                )} */}
-
-                  {!openEdit && <CourseP>Price: ${course.price}</CourseP>}
-                  {openEdit && edit !== course._id && <CourseP>Price: ${course.price}</CourseP>}
-                  {!openEdit && <CourseP>Start: {course.startDate}</CourseP>}
-                  {openEdit && edit !== course._id && <CourseP>Start: {course.startDate}</CourseP>}
 
                   {openEdit && edit === course._id && (
                     <EditWrapper>
+                      <EditInputH5
+                        name="title"
+                        type="text"
+                        id="exampleforTitle"
+                        defaultValue={course.title}
+                        onChange={handleChangeTitle}
+                      ></EditInputH5>
                       <EditInput
                         id="exampleforContent"
                         aria-describedby="emailHelp"
                         name="content"
-                        value={course.description}
+                        defaultValue={course.description}
                         onChange={handleChangeDescription}
                       ></EditInput>
 
                       <EditInput
                         name="max"
                         type="number"
-                        value={course.max}
+                        defaultValue={course.max}
                         onChange={handleChangeMax}
                       ></EditInput>
                       <EditDateWrap>
@@ -380,132 +371,74 @@ const Course = (props) => {
                       ></EditInput>
                     </EditWrapper>
                   )}
-                  {/* <CourseP>Student Delete</CourseP> */}
-                  {currentUser && currentUser.user.role == "student" && (
-                    <CourseBtn onClick={PopUpDeleteStudentCourse} id={course._id}>
-                      <AiFillDelete />
-                      delete
-                    </CourseBtn>
-                  )}
-                  {!openEdit && currentUser && currentUser.user.role == "instructor" && (
+                  {!openEdit && currentUser.user.role == "instructor" && (
                     <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
-                      {/* <AiFillDelete /> */}
-                      delete
+                      Delete
                     </CourseBtn>
                   )}
 
                   {!openEdit &&
                     course.students.length === 0 &&
-                    currentUser &&
                     currentUser.user.role == "instructor" && (
                       <CourseBtn onClick={PopUpEdit} id={course._id}>
                         Edit
                       </CourseBtn>
                     )}
 
-                  {openEdit &&
-                    edit !== course._id &&
-                    currentUser &&
-                    currentUser.user.role == "instructor" && (
-                      <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
-                        {/* <AiFillDelete /> */}
-                        delete
-                      </CourseBtn>
-                    )}
+                  {openEdit && edit !== course._id && currentUser.user.role == "instructor" && (
+                    <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
+                      {/* <AiFillDelete /> */}
+                      Delete
+                    </CourseBtn>
+                  )}
                   {openEdit &&
                     edit !== course._id &&
                     course.students.length === 0 &&
-                    currentUser &&
                     currentUser.user.role == "instructor" && (
                       <CourseBtn onClick={PopUpEdit} id={course._id}>
                         Edit
                       </CourseBtn>
                     )}
-                  {openEdit &&
-                    edit === course._id &&
-                    currentUser &&
-                    currentUser.user.role == "instructor" && (
+                  {openEdit && edit === course._id && currentUser.user.role == "instructor" && (
+                    <div>
                       <CourseBtn onClick={handleCloseEdit} id={course._id}>
-                        {/* <AiFillDelete /> */}
                         Cancel
                       </CourseBtn>
-                    )}
-                  {openEdit &&
-                    edit === course._id &&
-                    currentUser &&
-                    currentUser.user.role == "instructor" && (
                       <CourseBtn onClick={PopUpSave} id={course._id}>
                         Save
                       </CourseBtn>
-                    )}
-                  {/* </CourseRow> */}
+                    </div>
+                  )}
                 </CourseWrap>
               </CourseWrapper>
             ))}
           </DivWrapper2>
 
-          {/* <DivWrapper3> */}
-          {/* {edit && course.students.length > 0 && openEdit && (
-            <MsgWrap>
-              <MsgDiv>
-                <MsgBtn onClick={handleCloseEdit}>x</MsgBtn>
-                <MsgIcon>
-                  <ImWarning />
-                  <MsgH1>Error !</MsgH1>
-                </MsgIcon>
-                <MsgP>Student are not 0 </MsgP>
-              </MsgDiv>
-            </MsgWrap>
-          )} */}
-
-          {/* {course.students.length > 0 && openDelete && instructorCourses && (
-            
-            <MsgWrap>
-              <MsgDiv>
-                <MsgBtn onClick={handleCloseDelete}>x</MsgBtn>
-                <MsgIcon>
-                  <ImWarning />
-                  <MsgH1>Error !</MsgH1>
-                </MsgIcon>
-                <MsgP>Student need to be 0 </MsgP>
-              </MsgDiv>
-            </MsgWrap>
-            
-          )} */}
-
           {openSave && (
             <PopUpBackground>
               <PopUpContainer>
-                <PopUpCloseBtn>
-                  <PopUpCloseBtn1 onClick={handleCloseSave}>x</PopUpCloseBtn1>
-                </PopUpCloseBtn>
                 <PopUpTitle>
-                  <PopUpH1>Are You Sure To Save ?</PopUpH1>
+                  <PopUpH1> Save</PopUpH1>
                 </PopUpTitle>
-                <PopUpFooter>
-                  <PopUpBtn onClick={handleCloseSave}>Cancel</PopUpBtn>
-                  <PopUpBtn onClick={handleEditCourse} id={save}>
-                    Save
-                  </PopUpBtn>
-                </PopUpFooter>
+                <PopUpP>Are You Sure To Dave?</PopUpP>
+                <PopUpBtn1 onClick={handleCloseSave}>Cancel</PopUpBtn1>
+                <PopUpBtn2 onClick={handleEditCourse} id={save}>
+                  Save
+                </PopUpBtn2>
               </PopUpContainer>
             </PopUpBackground>
           )}
           {openDeleteCourse && (
             <PopUpBackground>
               <PopUpContainer>
-                <PopUpCloseBtn>
-                  <PopUpCloseBtn1 onClick={handleCloseDelete}>x</PopUpCloseBtn1>
-                </PopUpCloseBtn>
                 <PopUpTitle>
-                  <PopUpH1>Are You Sure To Delete ?</PopUpH1>
+                  <PopUpH1> Delete</PopUpH1>
                 </PopUpTitle>
-                <PopUpFooter>
-                  <PopUpBtn onClick={handleCloseDelete}>Cancel</PopUpBtn>
-                  <PopUpBtn onClick={handleDeleteCourse} id={instructorCourses}>
-                    Delete
-                  </PopUpBtn>
-                </PopUpFooter>
+                <PopUpP>Are You Sure To Delete?</PopUpP>
+                <PopUpBtn1 onClick={handleCloseDelete}>Cancel</PopUpBtn1>
+                <PopUpBtn2 onClick={handleDeleteCourse} id={instructorCourses}>
+                  Delete
+                </PopUpBtn2>
               </PopUpContainer>
             </PopUpBackground>
           )}
@@ -530,18 +463,15 @@ const Course = (props) => {
           {openDeleteStudent && (
             <PopUpBackground>
               <PopUpContainer>
-                <PopUpCloseBtn>
-                  <PopUpCloseBtn1 onClick={handleClose}>x</PopUpCloseBtn1>
-                </PopUpCloseBtn>
                 <PopUpTitle>
-                  <PopUpH1>Are You Sure To Delete ?</PopUpH1>
+                  <PopUpH1> Delete</PopUpH1>
                 </PopUpTitle>
-                <PopUpFooter>
-                  <PopUpBtn onClick={handleClose}>Cancel</PopUpBtn>
-                  <PopUpBtn onClick={handleDeleteStudentCourse} id={studentCourses}>
-                    Delete
-                  </PopUpBtn>
-                </PopUpFooter>
+                <PopUpP>Are You Sure To Delete?</PopUpP>
+
+                <PopUpBtn1 onClick={handleClose}>Cancel</PopUpBtn1>
+                <PopUpBtn2 onClick={handleDeleteStudentCourse} id={studentCourses}>
+                  Delete
+                </PopUpBtn2>
               </PopUpContainer>
             </PopUpBackground>
           )}

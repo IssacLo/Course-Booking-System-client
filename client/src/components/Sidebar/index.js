@@ -33,6 +33,7 @@ const SideBar = (props) => {
           <SidebarLink to="services" onClick={toggle}>
             Services
           </SidebarLink>
+          <SidebarRoute to="/signup">Sign Up</SidebarRoute>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign In</SidebarRoute>

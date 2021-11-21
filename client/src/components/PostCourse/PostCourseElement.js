@@ -191,14 +191,14 @@ export const PostCourseContent = styled.div`
 `;
 
 export const PostCourseForm = styled.form`
-  background: #ffbb2b;
+  background: #010101;
   max-width: 500px;
   height: auto;
   width: 100%;
   display: grid;
   margin: 0 auto;
   padding: 30px 32px;
-  border: 2px solid #ef3f41;
+  /* border: 2px solid #ef3f41; */
   border-radius: 15px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   z-index: 0;
@@ -222,7 +222,7 @@ export const PostCourseInput = styled.input`
   margin-bottom: 14px;
   border: 1px solid gray;
   border-radius: 7px;
-  background: #4ab29c;
+  /* background: #4ab29c; */
 `;
 
 export const PostCourseText = styled.textarea`
@@ -231,7 +231,7 @@ export const PostCourseText = styled.textarea`
 
   border: 1px solid gray;
   border-radius: 7px;
-  background: #4ab29c;
+  /* background: #4ab29c; */
 `;
 
 export const PostCourseBtn = styled.button`

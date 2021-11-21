@@ -50,17 +50,18 @@ const Profile = (props) => {
           <ProfileH1>
             <ProfileStrong>Profile Page</ProfileStrong>
           </ProfileH1>
-          <ProfileH3>
+          {/* <ProfileH3>
             <ProfileStrong>Welcome back {currentUser.user.username}</ProfileStrong>
-          </ProfileH3>
+          </ProfileH3> */}
           <ProfilePWrap>
-            <ProfileP1 onClick={handleOpen}>JWT</ProfileP1>
+            {/* <ProfileP1 onClick={handleOpen}>JWT</ProfileP1>
             {open && (
               <ProfileAlert>
                 <ProfileBtn onClick={handleClose}>x</ProfileBtn>
                 {currentUser.token}
               </ProfileAlert>
-            )}
+            )} */}
+            <ProfileP>Username: {currentUser.user.username}</ProfileP>
             <ProfileP>ID: {currentUser.user._id}</ProfileP>
             <ProfileP>Email: {currentUser.user.email}</ProfileP>
             <ProfileP>Role: {currentUser.user.role}</ProfileP>

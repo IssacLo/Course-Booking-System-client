@@ -26,9 +26,9 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrap>
-        <FooterLinksContainer>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
+        {/* <FooterLinksContainer>
+          <FooterLinksWrapper> */}
+        {/* <FooterLinkItems>
               <FooterLinkTitle> About us</FooterLinkTitle>
               <FooterLink to="/signin">How it works</FooterLink>
               <FooterLink to="/signin">About us</FooterLink>
@@ -57,9 +57,9 @@ const Footer = () => {
               <FooterLink to="/signin">About us</FooterLink>
               <FooterLink to="/signin">About us</FooterLink>
               <FooterLink to="/signin">About us</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-        </FooterLinksContainer>
+            </FooterLinkItems> */}
+        {/* </FooterLinksWrapper>
+        </FooterLinksContainer> */}
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/" onClick={toggleHome}>
@@ -68,7 +68,7 @@ const Footer = () => {
             <WebsiteRights>
               Coursement © {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
-            <SocialIcons>
+            {/* <SocialIcons>
               <SocialIconLink href="/" target="_blank" aria-label="Facebook"></SocialIconLink>
               <FaFacebook />
               <SocialIconLink href="/" target="_blank" aria-label="Instagram"></SocialIconLink>
@@ -83,7 +83,7 @@ const Footer = () => {
               <FaTwitter />
               <SocialIconLink href="/" target="_blank" aria-label="Linkedin"></SocialIconLink>
               <FaLinkedin />
-            </SocialIcons>
+            </SocialIcons> */}
           </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>
