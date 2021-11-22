@@ -95,6 +95,7 @@ export const CourseP = styled.p`
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: black;
+  border-bottom: none;
 `;
 
 export const CourseBtn = styled.button`

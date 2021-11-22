@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Video from "../video/video.mp4";
 // import { Button } from "../ButtonElements";
-import Icon1 from "../images/svg-1.svg";
-import Icon2 from "../images/svg-2.svg";
-import Icon3 from "../images/svg-3.svg";
-import Icon4 from "../images/svg-4.svg";
-import Icon5 from "../images/svg-5.svg";
-import Icon6 from "../images/svg-6.svg";
+import Icon1 from "../images/svg-17.svg";
+import Icon2 from "../images/svg-18.svg";
+import Icon3 from "../images/svg-11.svg";
+import Icon4 from "../images/svg-15.svg";
+import Icon5 from "../images/svg-13.svg";
+import Icon6 from "../images/svg-14.svg";
+import Icon7 from "../images/svg-16.svg";
 // import { Link as LinkS } from "react-scroll";
 
 import {
@@ -110,11 +111,9 @@ const InfoSection = ({
           <InfoRow1>
             <Column1>
               <TextWrapper>
-                <TopLine1>Learning System</TopLine1>
+                <TopLine1>Booking System</TopLine1>
                 <Heading1>Booking A Course May Easy</Heading1>
-                <Subtitle1>
-                  This system is using React.js as front-end framework, and Node.js, MongoDB as
-                </Subtitle1>
+                <Subtitle1>Are You Instructor? Or Student?</Subtitle1>
                 <BtnWrap>
                   {!currentUser && (
                     <Button
@@ -150,7 +149,7 @@ const InfoSection = ({
                 <TopLine2>As an Instructor</TopLine2>
                 <Heading2>Post Your Course In Any Time</Heading2>
                 <Subtitle2>
-                  TYou can become an instructor by registering as one, and start making online
+                  You can become an instructor by registering as one, and start making online
                   courses
                 </Subtitle2>
                 <BtnWrap>
@@ -185,10 +184,10 @@ const InfoSection = ({
           <InfoRow1>
             <Column1>
               <TextWrapper>
-                <TopLine1>Learning System</TopLine1>
-                <Heading1>"XXXXXXXXXXXX"</Heading1>
+                <TopLine1>As a Student</TopLine1>
+                <Heading1>Find Your Course In Anytime</Heading1>
                 <Subtitle1>
-                  This system is using React.js as front-end framework, and Node.js, MongoDB as
+                  You can become a student by registering as one, and start to join the course
                 </Subtitle1>
                 <BtnWrap>
                   {!currentUser && (
@@ -218,35 +217,33 @@ const InfoSection = ({
         </InfoWrapper>
       </InfoContainer1>
       <ServicesContainer id="services">
-        <ServicesH1>XXXXXXX </ServicesH1>
+        {/* <ServicesH1>XXXXXXX </ServicesH1> */}
         <ServicesWrapper>
           <ServicesCard>
-            <ServicesIcon src={Icon6} />
-            <ServicesH2>ZZZZZZZZ</ServicesH2>
-            <ServicesP>xxxxxxxx</ServicesP>
-          </ServicesCard>
-          <ServicesCard>
             <ServicesIcon src={Icon5} />
-            <ServicesH2>ZZZZZZZZ</ServicesH2>
-            <ServicesP>xxxxxxxx</ServicesP>
+            <ServicesH2>Post Course</ServicesH2>
+            <ServicesP>As an Instructor</ServicesP>
           </ServicesCard>
           <ServicesCard>
             <ServicesIcon src={Icon3} />
-            <ServicesH2>ZZZZZZZZ</ServicesH2>
-            <ServicesP>xxxxxxxx</ServicesP>
+            <ServicesH2>Enroll Course</ServicesH2>
+            <ServicesP>As a Student</ServicesP>
+          </ServicesCard>
+          <ServicesCard>
+            <ServicesIcon src={Icon6} />
+            <ServicesH2>Search Course</ServicesH2>
+            <ServicesP>As a Student</ServicesP>
           </ServicesCard>
         </ServicesWrapper>
       </ServicesContainer>
-      <InfoContainer1 id="signup">
+      <InfoContainer2 id="signup">
         <InfoWrapper>
-          <InfoRow1>
+          <InfoRow2>
             <Column1>
               <TextWrapper>
-                <TopLine1>Learning System</TopLine1>
-                <Heading1>"XXXXXXXXXXXX"</Heading1>
-                <Subtitle1>
-                  This system is using React.js as front-end framework, and Node.js, MongoDB as
-                </Subtitle1>
+                <TopLine2>Booking System</TopLine2>
+                <Heading2>JOIN US !</Heading2>
+                <Subtitle2>Become our member in 1 step</Subtitle2>
                 <BtnWrap>
                   {!currentUser && (
                     <Button
@@ -268,45 +265,12 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={Icon2} alt="Course" />
+                <Img src={Icon7} alt="Course" />
               </ImgWrap>
             </Column2>
-          </InfoRow1>
+          </InfoRow2>
         </InfoWrapper>
-      </InfoContainer1>
-      {/* <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
-            <Column1>
-              <TextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headLine}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
-                <BtnWrap>
-                  <Button
-                    to={to}
-                    smooth={true}
-                    duration={550}
-                    spy={true}
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >
-                    {buttonLabel}
-                  </Button>
-                </BtnWrap>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
-            </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoContainer> */}
+      </InfoContainer2>
     </>
   );
 };

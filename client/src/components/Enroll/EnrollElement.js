@@ -209,9 +209,8 @@ export const EnrollBtn = styled.button`
   background: none;
   border: none;
   border-radius: 50px;
-  font-size: 35px;
-  margin-left: 220px;
-  margin-top: 20px;
+  font-size: 20px;
+  margin-left: 6rem;
 
   /* width: 50px; */
   /* height:50px */
