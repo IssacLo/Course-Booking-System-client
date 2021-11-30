@@ -3,7 +3,8 @@ import { FiSearch } from "react-icons/fi";
 import { GrAddCircle } from "react-icons/gr";
 import { ImWarning } from "react-icons/im";
 import { MdOutlineDone } from "react-icons/md";
-import { useHistory } from "react-router-dom";
+import { BiRightArrowCircle } from "react-icons/bi";
+import { Link, useHistory } from "react-router-dom";
 import CourseService from "../../services/course.service";
 // import axios from "axios";
 
@@ -28,6 +29,7 @@ import {
   EnrollBtn,
   EnrollH5,
   EnrollP,
+  Icon,
 } from "./EnrollElement";
 
 const Enroll = (props) => {
@@ -209,18 +211,27 @@ const Enroll = (props) => {
                 <EnrollRow>
                   <EnrollH5>{course.title}</EnrollH5>
                   <EnrollPWrap>
-                    <EnrollP>Instructor: {course.instructor.username} </EnrollP>
                     <EnrollP>{course.description}</EnrollP>
+
+                    <EnrollP>
+                      Instructor:{" "}
+                      <Link to={`/instructorprofile/${course.instructor._id}`}>
+                        {course.instructor.username}
+                      </Link>{" "}
+                    </EnrollP>
+
                     <EnrollP>
                       Student Count: {course.students.length}/{course.max}
                     </EnrollP>
                     <EnrollP>Price: ${course.price}</EnrollP>
-                    <EnrollP>{course.startDate}</EnrollP>
+                    <EnrollP>Stat Date: {course.startDate}</EnrollP>
                   </EnrollPWrap>
                   {currentUser && currentUser.user.role == "student" && (
                     <EnrollBtn onClick={handleEnroll} id={course._id}>
                       enroll
-                      {/* <GrAddCircle id={course._id} /> */}
+                      <Icon>
+                        <BiRightArrowCircle />
+                      </Icon>
                     </EnrollBtn>
                   )}
                 </EnrollRow>

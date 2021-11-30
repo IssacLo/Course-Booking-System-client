@@ -232,7 +232,7 @@ export const PopUpTitle = styled.div`
 
 export const PopUpH1 = styled.h1`
   /* display: flex; */
-  margin-left: 1.5rem;
+  margin-left: 3.3rem;
   /* margin-top: -1rem; */
   font-size: 1.7rem;
   font-weight: bold;

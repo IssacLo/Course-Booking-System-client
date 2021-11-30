@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   min-height: 1000px;
   background: linear-gradient(#f0f0f0, #bfbfbf);
-  /* position: relative; */
 `;
 
-export const DivWrapper1 = styled.div`
-  /* display: flex; */
-  /* position: relative; */
+export const H1 = styled.h1`
+  /* margin-top: 3rem; */
+  margin-left: 5rem;
 `;
+
+export const DivWrapper1 = styled.div``;
 
 export const DivWrapper2 = styled.div`
   display: flex;
@@ -19,17 +20,8 @@ export const DivWrapper2 = styled.div`
   align-items: flex-start;
   position: relative;
   z-index: 0;
-
-  /* border: 1 solid red; */
-  /* height: auto; */
-  /* width: auto; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
 `;
-export const DivWrapper3 = styled.div`
-  /* float: center;
-  z-index: 1; */
-`;
+export const DivWrapper3 = styled.div``;
 
 export const CourseWrapper = styled.div`
   position: relative;
@@ -37,25 +29,8 @@ export const CourseWrapper = styled.div`
 `;
 
 export const CourseWrap = styled.div`
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* justify-content: center;
-  align-items: flex-start; */
-  /* margin-left: 50px; */
-  /* z-index: 0; */
-  /* height: 200px;
-  width: 300px;
-  background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
-  margin: 50px;
-  border-radius: 30px;
-  border: 2px solid black; */
-  /* display: flex; */
-  /* justify-content: flex-start;
-  align-items: flex-start; */
-  /* border: 1 solid red; */
-  height: 15rem;
-  min-width: 35rem;
+  height: 17rem;
+  min-width: 29rem;
   max-width: 30rem;
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
   margin-left: 30px;
@@ -65,8 +40,8 @@ export const CourseWrap = styled.div`
 
   border-radius: 30px;
   border: 2px solid black;
-  position: relative;
-  z-index: 0;
+  /* position: relative; */
+  /* z-index: 0; */
 `;
 
 export const CourseH5 = styled.h5`
@@ -99,31 +74,84 @@ export const CourseP = styled.p`
 `;
 
 export const CourseBtn = styled.button`
-  /* justify-content: flex-end;
-  align-items: flex-end; */
-  background: none;
-  border: none;
-  border-radius: 50px;
-  font-size: 20px;
-  margin-left: 6rem;
-  /* margin-top: 1rem; */
+  margin-left: 15rem;
+  margin-top: -20rem;
 
-  /* width: 50px; */
-  /* height:50px */
-  /* padding: 15px;
-  font-size: 50px;
-  margin-top: 20px;
-  margin-left: 30px;
-  border-radius: 5px;
-  border: 2px solid black;
-  font-size: 10px;
-  background: white;
-  box-shadow: black; */
+  color: #d63e3e;
+  font-weight: bold;
 
-  /* &:hover {
-    background: grey;
-    color: black;
-  } */
+  cursor: pointer;
+  transition: 0.1s;
+  border: 2px solid #d63e3e;
+  /* border: none; */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #d63e3e;
+  }
+`;
+export const CourseBtn1 = styled.button`
+  margin-left: 5rem;
+  margin-top: 1.5rem;
+
+  color: #4ab29c;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.1s;
+  border: 2px solid #4ab29c;
+  /* border: none; */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #4ab29c;
+  }
+`;
+export const CourseBtn3 = styled.button`
+  margin-left: 5rem;
+  margin-top: 1.5rem;
+
+  color: #d63e3e;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.1s;
+  border: 2px solid #d63e3e;
+  /* border: none; */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #d63e3e;
+  }
+`;
+export const CourseBtn2 = styled.button`
+  margin-left: 5.5rem;
+  margin-top: 0.7rem;
+
+  color: #ff8154;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.1s;
+  border: 2px solid #ff8154;
+  /* border: none; */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #ff8154;
+  }
 `;
 
 // export const PostCourseContent = styled.div`
@@ -134,6 +162,7 @@ export const CourseBtn = styled.button`
 // `;
 
 export const EditWrapper = styled.div``;
+
 export const EditLabel = styled.label`
   font-size: 14px;
   color: black;
@@ -270,12 +299,16 @@ export const PopUpBackground = styled.div`
   /* background-color: rgba(200, 200, 200); */
   /* position: fixed; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center;  */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   /* margin-bottom: 10rem; */
   /* top: 3rem; */
-  z-index: 2;
+  /* z-index: 2; */
 `;
 export const PopUpContainer = styled.div`
   height: 12rem;
@@ -398,44 +431,19 @@ export const PopUpBtn = styled.button`
 `;
 
 export const MsgWrap = styled.div`
-  /* height: 100%; */
-  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  /* position: absolute; */
-  /* flex-direction: column;
-  z-index: 1; */
-  /* height: 15rem;
-  min-width: 35rem;
-  max-width: 30rem; */
-  /* background: red; */
-  /* margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-
-  border-radius: 30px;
-  border: 2px solid black; */
 `;
 export const MsgDiv = styled.div`
-  /* justify-content: center;
-  align-items: center; */
-  /* 
-  width: 100%;
-  padding: 1rem; */
-  /* float: center; */
-  /* float: inline-start; */
-  /* margin-top: 0; */
-  /* position: fixed; */
-  /* top: 100px; */
-
   height: 10rem;
   width: 25rem;
-  /* display: grid; */
-  /* margin: 0 auto; */
-  /* padding: 80px 32px; */
+
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   background-color: #ff3c35;
@@ -497,14 +505,9 @@ export const MsgBtnDiv = styled.div`
   width: auto;
 `;
 export const MsgBtn1 = styled.span`
-  /* display: inline; */
   margin-left: 4rem;
-  /* margin-top: 1rem; */
   color: black;
   font-weight: bold;
-  /* float: right; */
-  /* font-size: 22px; */
-  /* line-height: 5px; */
   cursor: pointer;
   transition: 0.1s;
   border: 1px solid black;
@@ -517,14 +520,9 @@ export const MsgBtn1 = styled.span`
   }
 `;
 export const MsgBtn2 = styled.span`
-  /* display: inline; */
-  margin-left: 1rem;
-  /* margin-top: 0.2rem; */
+  margin-left: 6rem;
   color: black;
   font-weight: bold;
-  /* float: right; */
-  /* font-size: 22px; */
-  /* line-height: 5px; */
   cursor: pointer;
   transition: 0.1s;
   border: 1px solid black;

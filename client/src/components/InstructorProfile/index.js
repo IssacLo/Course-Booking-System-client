@@ -63,18 +63,8 @@ const InstructorProfile = (props) => {
         <ProfileH1>
           <ProfileStrong>Instructor {instructorData.username} Profile Page</ProfileStrong>
         </ProfileH1>
-        {/* <ProfileH3>
-          <ProfileStrong>Welcome back </ProfileStrong>
-        </ProfileH3> */}
+
         <ProfilePWrap>
-          {/* <ProfileP1 onClick={handleOpen}>JWT</ProfileP1> */}
-          {/* {open && (
-            <ProfileAlert>
-              <ProfileBtn onClick={handleClose}>x</ProfileBtn>
-              {currentUser.token}
-            </ProfileAlert>
-          )} */}
-          <ProfileP>ID: {instructorData._id}</ProfileP>
           <ProfileP>Email: {instructorData.email}</ProfileP>
         </ProfilePWrap>
       </ProfileWrap>

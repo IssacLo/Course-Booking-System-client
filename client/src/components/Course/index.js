@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
+import { ImCancelCircle } from "react-icons/im";
+import { BsSave2 } from "react-icons/bs";
 import { ImWarning } from "react-icons/im";
 import { MdOutlineDone } from "react-icons/md";
 // import Course from "../server/models/course-model";
@@ -8,6 +11,7 @@ import CourseService from "../../services/course.service";
 
 import {
   Container,
+  H1,
   DivWrapper1,
   DivWrapper2,
   DivWrapper3,
@@ -17,6 +21,9 @@ import {
   CourseH5,
   CourseP,
   CourseBtn,
+  CourseBtn1,
+  CourseBtn2,
+  CourseBtn3,
   CoursePwrap,
   EditWrapper,
   EditLabel,
@@ -266,12 +273,12 @@ const Course = (props) => {
     <Container>
       {currentUser && currentUser.user.role == "instructor" && (
         <div>
-          <h1>Instructor's Course page</h1>
+          <H1>Instructor's Course page</H1>
         </div>
       )}
       {currentUser && currentUser.user.role == "student" && (
         <div>
-          <h1>Student's Course page</h1>
+          <H1>Student's Course page</H1>
         </div>
       )}
       {currentUser && courseData && Array.isArray(courseData) && (
@@ -294,9 +301,13 @@ const Course = (props) => {
                   )}
                   {currentUser.user.role == "student" && (
                     <div>
-                      <Link to={`/instructorprofile/${course.instructor._id}`}>
-                        <CourseP>Instructor: {course.instructor.username}</CourseP>
-                      </Link>
+                      <CourseP>
+                        Instructor:{" "}
+                        <Link to={`/instructorprofile/${course.instructor._id}`}>
+                          {course.instructor.username}{" "}
+                        </Link>
+                      </CourseP>
+
                       <CourseBtn onClick={PopUpDeleteStudentCourse} id={course._id}>
                         <AiFillDelete />
                         Delete
@@ -372,41 +383,46 @@ const Course = (props) => {
                     </EditWrapper>
                   )}
                   {!openEdit && currentUser.user.role == "instructor" && (
-                    <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
+                    <CourseBtn3 onClick={PopUpDeleteCourse} id={course._id}>
+                      <AiFillDelete />
                       Delete
-                    </CourseBtn>
+                    </CourseBtn3>
                   )}
 
                   {!openEdit &&
                     course.students.length === 0 &&
                     currentUser.user.role == "instructor" && (
-                      <CourseBtn onClick={PopUpEdit} id={course._id}>
+                      <CourseBtn1 onClick={PopUpEdit} id={course._id}>
+                        <AiFillEdit />
                         Edit
-                      </CourseBtn>
+                      </CourseBtn1>
                     )}
 
                   {openEdit && edit !== course._id && currentUser.user.role == "instructor" && (
-                    <CourseBtn onClick={PopUpDeleteCourse} id={course._id}>
-                      {/* <AiFillDelete /> */}
+                    <CourseBtn3 onClick={PopUpDeleteCourse} id={course._id}>
+                      <AiFillDelete />
                       Delete
-                    </CourseBtn>
+                    </CourseBtn3>
                   )}
                   {openEdit &&
                     edit !== course._id &&
                     course.students.length === 0 &&
                     currentUser.user.role == "instructor" && (
-                      <CourseBtn onClick={PopUpEdit} id={course._id}>
+                      <CourseBtn1 onClick={PopUpEdit} id={course._id}>
+                        <AiFillEdit />
                         Edit
-                      </CourseBtn>
+                      </CourseBtn1>
                     )}
                   {openEdit && edit === course._id && currentUser.user.role == "instructor" && (
                     <div>
-                      <CourseBtn onClick={handleCloseEdit} id={course._id}>
+                      <CourseBtn2 onClick={handleCloseEdit} id={course._id}>
+                        {/* <ImCancelCircle /> */}
                         Cancel
-                      </CourseBtn>
-                      <CourseBtn onClick={PopUpSave} id={course._id}>
+                      </CourseBtn2>
+                      <CourseBtn2 onClick={PopUpSave} id={course._id}>
+                        <BsSave2 />
                         Save
-                      </CourseBtn>
+                      </CourseBtn2>
                     </div>
                   )}
                 </CourseWrap>
@@ -420,7 +436,7 @@ const Course = (props) => {
                 <PopUpTitle>
                   <PopUpH1> Save</PopUpH1>
                 </PopUpTitle>
-                <PopUpP>Are You Sure To Dave?</PopUpP>
+                <PopUpP>Are You Sure To Save?</PopUpP>
                 <PopUpBtn1 onClick={handleCloseSave}>Cancel</PopUpBtn1>
                 <PopUpBtn2 onClick={handleEditCourse} id={save}>
                   Save

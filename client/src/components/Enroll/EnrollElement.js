@@ -161,14 +161,15 @@ export const EnrollWrap = styled.div`
 `;
 
 export const EnrollRow = styled.div`
-  height: 15rem;
+  height: 18rem;
   min-width: 23rem;
-  max-width: 30rem;
+  max-width: 32rem;
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
   /* background: ${({ background }) => (background ? "#36594F" : "#fff")}; */
   margin-right: 30px;
   margin-top: 20px;
   margin-bottom: 10px;
+  padding-right: 2rem;
 
   border-radius: 30px;
   border: 2px solid black;
@@ -203,29 +204,27 @@ export const EnrollP = styled.p`
 `;
 
 export const EnrollBtn = styled.button`
-  display: flex;
-  /* justify-content: flex-end;
-  align-items: flex-end; */
-  background: none;
-  border: none;
-  border-radius: 50px;
+  margin-left: 14rem;
+  margin-top: 0.5rem;
+
+  color: #4ab29c;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.1s;
+  border: 2px solid #4ab29c;
+  /* border: none; */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  :hover {
+    color: white;
+    background-color: #4ab29c;
+  }
+`;
+
+export const Icon = styled.p`
+  display: inline;
   font-size: 20px;
-  margin-left: 6rem;
-
-  /* width: 50px; */
-  /* height:50px */
-  /* padding: 15px;
-  font-size: 50px;
-  margin-top: 20px;
-  margin-left: 30px;
-  border-radius: 5px;
-  border: 2px solid black;
-  font-size: 10px;
-  background: white;
-  box-shadow: black; */
-
-  /* &:hover {
-    background: grey;
-    color: black;
-  } */
 `;

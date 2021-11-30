@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 600px;
+  min-height: 800px;
 `;
 
 export const ProfileWrap = styled.div`
@@ -86,32 +86,20 @@ export const CourseWrapper = styled.div`
   z-index: 0;
 `;
 
-export const CourseWrap = styled.div`
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 50px; */
-  /* height: 200px;
-  width: 300px;
-  background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
-  margin: 50px;
-  border-radius: 30px;
-  border: 2px solid black; */
-`;
+export const CourseWrap = styled.div``;
 
 export const CourseRow = styled.div`
   /* display: flex;
   justify-content: flex-start;
   align-items: flex-start; */
-  height: 15rem;
+  height: 12rem;
   min-width: 23rem;
   max-width: 30rem;
   background: linear-gradient(108deg, rgba(228, 248, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
   margin-right: 30px;
   margin-top: 20px;
   margin-bottom: 10px;
+  padding-right: 2rem;
 
   border-radius: 30px;
   border: 2px solid black;

@@ -73,7 +73,7 @@ export const MsgIcon = styled.div`
   font-weight: bold;
   /* border: 1px solid black;
   border-radius: 50%; */
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-left: 2rem;
 `;
 
@@ -134,7 +134,7 @@ export const MsgBtnDiv = styled.div`
 // `;
 export const MsgBtn2 = styled.span`
   /* display: inline; */
-  margin-left: 1rem;
+  margin-left: 5.5rem;
   /* margin-top: 0.2rem; */
   color: black;
   font-weight: bold;
